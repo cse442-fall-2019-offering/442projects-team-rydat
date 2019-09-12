@@ -1,0 +1,81 @@
+* {
+  background-color: #888B8D;
+}
+
+#header{
+  background-color: #888B8D;
+  width:100%;
+  height:100px;
+  text-align: center;
+  font-size: 50px;
+}
+
+#sidebar-left{
+  background-color: red;
+  float:left;
+  width:20%;
+}
+
+#cat{
+  float: left;
+}
+
+#lefttext{
+  text-align: center;
+  font-size: 30px;
+  background-color: #888B8D;
+}
+
+input[type=text] {
+  width: 100%;
+  box-sizing: border-box;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+  background-color: white;
+  background-image: url('microphone.jpg');
+  background-size: 20px;
+  background-position: 9px 10px;
+  background-repeat: no-repeat;
+  padding: 12px 20px 12px 40px;
+}
+
+#main{
+  background-color: #888B8D;
+  float:left;
+  text-align: center;
+  width:60%;
+  font-size: 50px;
+}
+
+#sidebar-right{
+  background-color: red;
+  float:left;
+  width:20%;
+}
+
+#playlist{
+  text-align: center;
+  font-size: 25px;
+}
+
+#pwt{
+  float: left;
+}
+
+#track1{
+  float: left;
+  font-size: 29px;
+}
+
+#footer{
+  background-color: green;
+  clear:both;
+  height: 100px;
+  width: 100%;
+  text-align: center;
+}
+
+#sidebar-left, #main, #sidebar-right{
+  min-height: 500px
+}
