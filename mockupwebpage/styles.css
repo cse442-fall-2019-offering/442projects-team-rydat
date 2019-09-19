@@ -1,54 +1,24 @@
 body{
-  background: linear-gradient(to bottom, rgba(255,255,255,0.15) 0%, rgba(0,0,0,0.15) 100%), radial-gradient(at top center, rgba(255,255,255,0.40) 0%, rgba(0,0,0,0.40) 120%) #989898;
-  background-blend-mode: multiply,multiply;
+    background-image:url('images/visual.gif');
+    background-size:100%;
+    background-repeat: repeat;
+    height:100%;
+    width:99%;
+	overflow-y: hidden;
 }
 #header{
+  font-family: 'Satisfy', cursive;
+  color: #2EFEC8;
   width:100%;
   height:100px;
-  font-size: 50px;
+  font-size: 100px;
 }
-
-.leftside {
-  height: 100%; /* 100% Full-height */
-  width: 0; /* 0 width - change this with JavaScript */
-  position: fixed; /* Stay in place */
-  z-index: 1; /* Stay on top */
-  top: 0; /* Stay at the top */
-  left: 0;
-  background-color: white;
-  overflow-x: hidden; /* Disable horizontal scroll */
-  padding-top: 60px; /* Place content 60px from the top */
-  transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
-}
-
-.leftside .closeleftbtn {
-  position: absolute;
-  top: 0;
-  right: 25px;
-  font-size: 36px;
-  margin-left: 50px;
-}
-
-.onclick{
-  font-size: 50px;
-}
-
-#sidebar-left{
-  float:left;
-  width:20%;
-}
-
-#cat{
-  float: left;
-}
-
 #lefttext{
-  text-align: center;
-  font-size: 30px;
+  color: #01DFD7;
+  font-size: 25px;
 }
-
 input[type=text] {
-  width: 98%;
+  width: 50%;
   box-sizing: border-box;
   border: 2px solid #ccc;
   border-radius: 4px;
@@ -60,13 +30,13 @@ input[type=text] {
   background-repeat: no-repeat;
   padding: 12px 20px 12px 40px;
 }
-
 #main{
   float:left;
-  width:60%;
-  font-size: 50px;
+  width:100%;
+  padding-top: 120;
+  font-size: 30px;
+  color: #F8E0E6;
 }
-
 .rightside {
   height: 100%; /* 100% Full-height */
   width: 0; /* 0 width - change this with JavaScript */
@@ -74,92 +44,47 @@ input[type=text] {
   z-index: 1; /* Stay on top */
   top: 0; /* Stay at the top */
   right: 0;
-  background-color: white;
+  background-color: #2A0A1B;
   overflow-x: hidden; /* Disable horizontal scroll */
   padding-top: 60px; /* Place content 60px from the top */
   transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
 }
-
 .rightside .closerightbtn {
   position: absolute;
-  top: 0;
-  right: 25px;
-  font-size: 36px;
+  top: 10;
+  right: 10px;
+  font-size: 20px;
   margin-left: 50px;
 }
-
 .onclick{
   font-size: 50px;
 }
-
 @media screen and (max-height: 450px) {
   .sidenav {padding-top: 15px;}
   .sidenav a {font-size: 18px;}
 }
-
-#sidebar-right{
-  float:left;
-  width:20%;
-}
-
 #playlist{
   text-align: center;
   font-size: 25px;
 }
-
-#pltitle{
-  text-align: center;
-  font-size: 30px;
+li.track {
+  font-family: 'Satisfy', cursive;
+  color: #FBEFEF; 
+  background-size: px;
 }
-
-ul.no_bullet {
-  list-style-type: none;
-  padding: 0;
-  margin: 0;
+#author{
+  font-family: 'Times New Roman';
+  color: #848484;
+  font-size: 14px	
 }
-
-li.track1 {
-  background: url('images/pwt.jpg') no-repeat left top;
-  background-size: 55px;
-  padding-left: 20px;
-
-}
-
-li.track2 {
-  background: url('images/nd.jpg') no-repeat left top;
-  background-size: 55px;
-  padding-left: 20px;
-
-}
-
-li.track3 {
-  background: url('images/gj.png') no-repeat left top;
-  background-size: 55px;
-  padding-left: 20px;
-}
-
-li.track4 {
-  background: url('images/jb.jpg') no-repeat left top;
-  background-size: 55px;
-  padding-left: 20px;
-}
-
-li.track5 {
-  background: url('images/b182.jpg') no-repeat left top;
-  background-size: 55px;
-  padding-left: 20px;
-}
-
 #footer{
   clear:both;
   height: 100px;
   width: 100%;
 }
-
 #sidebar-left, #main, #sidebar-right{
   min-height: 500px;
 }
-
 #header, #main, #footer {
   text-align: center;
 }

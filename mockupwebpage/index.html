@@ -1,77 +1,62 @@
 <html>
 <head>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>MusicMuse</title>
+  <title>MooDuse</title>
   <link rel="icon" href="images/lyre.jpg">
   <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
-  <div id="header">
-    MusicMuse
-  </div>
 
-  <div id="sidebar-left" class="leftside">
-    <a href="javascript:void(0)" class="closeleftbtn" onclick="closeLeft()">&times;</a>
-    <img id="cat" src="images/caticon.jpg" alt="meow" width="100" height="100">
+  <div>
     <div id="lefttext">
-      Alan P. <br> <br>
-      Log off <img src="images/logout.png" alt="out" width="25" height="25">
+	<br>
+      Hello, Alan P. 
+	  <br>
+      <div style="font-size: 12px; color: #D7DF01">-Not Alan? Log off</div>
     </div>
   </div>
-
-  <span style="float:left;font-size:35px;cursor:pointer;padding-right:210px;" onclick="openLeft()">Profile</span>
-
+  <br>
+  <div id="header">
+    MooDuse
+  </div>
+  <img src="images/double note.jpg" height="35" size="40" align="right" onclick="openRight()">
   <div id="main">
-    How are you feeling today?
-
+    How are you feeling?
     <form>
+	<br>
       <input type="text" name="feels" placeholder="...">
     </form>
-
-    <img src="images/visualizer.gif" alt="ooo" width="400" height="325">
+  <br><br><br>
+  <iframe src="https://open.spotify.com/embed/playlist/3iDPeNFhDWhCrETbZXkoOV" width="600" height="80" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
   </div>
-
+  
+</body>
+</html>
 
   <div id="sidebar-right" class="rightside">
     <a href="javascript:void(0)" class="closerightbtn" onclick="closeRight()">&times;</a>
-    <div id = "playlist">
-      <ul class = "no_bullet">
-        <li class = "track1">Plain White T's<br>Hey There Delilah</li>
+    <div>
+      <ol>
+        <li class = "track">Hey There Delilah<br><div id = "author"> Plain White T's</div></li>
         <br>
-        <li class = "track2">Neck Deep<br>A Part of Me</li>
+        <li class = "track">A Part of Me<br><div id = "author"> Neck Deep </div></li>
         <br>
-        <li class = "track3">Gary Jules<br>Mad World</li>
+        <li class = "track">Mad World<br><div id = "author"> Gary Jules </div></li>
         <br>
-        <li class = "track4">James Blunt<br>You're Beautiful</li>
+        <li class = "track">You're Beautiful<br><div id = "author"> James Blunt</div></li>
         <br>
-        <li class = "track5">Blink-182<br>Adam's Song</li>
-      </ul>
+        <li class = "track">Adam's Song<br><div id = "author"> Blink-182 </div></li>
+      </ol>
     </div>
   </div>
-
-  <span style="font-size:35px;cursor:pointer;float:right;" onclick="openRight()">Playlist</span>
-
+  
   <script>
   function openRight() {
-    document.getElementById("sidebar-right").style.width = "300px";
+    document.getElementById("sidebar-right").style.width = "200px";
   }
 
   function closeRight() {
     document.getElementById("sidebar-right").style.width = "0";
   }
-
-  function openLeft() {
-    document.getElementById("sidebar-left").style.width = "300px";
-  }
-
-  function closeLeft() {
-    document.getElementById("sidebar-left").style.width = "0";
-  }
-</script>
-
-<div id="footer">
-  <iframe src="https://open.spotify.com/embed/playlist/3iDPeNFhDWhCrETbZXkoOV" width="600" height="80" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
-</div>
-</body>
-</html>
+  </script>
