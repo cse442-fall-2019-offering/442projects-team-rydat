@@ -1,0 +1,90 @@
+body{
+    background-image:url('images/visual.gif');
+    background-size:100%;
+    background-repeat: repeat;
+    height:100%;
+    width:99%;
+	overflow-y: hidden;
+}
+#header{
+  font-family: 'Satisfy', cursive;
+  color: #2EFEC8;
+  width:100%;
+  height:100px;
+  font-size: 100px;
+}
+#lefttext{
+  color: #01DFD7;
+  font-size: 25px;
+}
+input[type=text] {
+  width: 50%;
+  box-sizing: border-box;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+  background-color: white;
+  background-image: url('images/microphone.jpg');
+  background-size: 20px;
+  background-position: 9px 10px;
+  background-repeat: no-repeat;
+  padding: 12px 20px 12px 40px;
+}
+#main{
+  float:left;
+  width:100%;
+  padding-top: 120;
+  font-size: 30px;
+  color: #F8E0E6;
+}
+.rightside {
+  height: 100%; /* 100% Full-height */
+  width: 0; /* 0 width - change this with JavaScript */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Stay on top */
+  top: 0; /* Stay at the top */
+  right: 0;
+  background-color: #2A0A1B;
+  overflow-x: hidden; /* Disable horizontal scroll */
+  padding-top: 60px; /* Place content 60px from the top */
+  transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
+}
+.rightside .closerightbtn {
+  position: absolute;
+  top: 10;
+  right: 10px;
+  font-size: 20px;
+  margin-left: 50px;
+}
+.onclick{
+  font-size: 50px;
+}
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+#playlist{
+  text-align: center;
+  font-size: 25px;
+}
+li.track {
+  font-family: 'Satisfy', cursive;
+  color: #FBEFEF; 
+  background-size: px;
+}
+#author{
+  font-family: 'Times New Roman';
+  color: #848484;
+  font-size: 14px	
+}
+#footer{
+  clear:both;
+  height: 100px;
+  width: 100%;
+}
+#sidebar-left, #main, #sidebar-right{
+  min-height: 500px;
+}
+#header, #main, #footer {
+  text-align: center;
+}
