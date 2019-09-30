@@ -1,0 +1,14 @@
+09/30 Meeting Notes
+Start of sprint 2
+
+- Need core functionality of project.
+	A basic functioning website "with music sounds".
+	Do something each week - don't save it all for the end.
+	Each user story needs a breakdown into techincal tasks.
+	Tasks are separate issues, should be labelled as "task"	
+	Every task (and every user story) needs an accpetance test in the comments.
+
+	Branches should be based on user stories, not tasks. 
+	Commit messages need hashtags.
+	
+	User stories were assigned, will check progress next week. 
