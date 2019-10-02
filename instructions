@@ -1,0 +1,12 @@
+
+instructions to to load website to local server on django...
+
+1) go to directory where manage.py is located
+
+2) run server using command :    python manage.py runserver
+
+3) http://localhost:8000/ 
+
+
+
+
