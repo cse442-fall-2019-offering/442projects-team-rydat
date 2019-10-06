@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> Welcome to MooDuse </title>
+        <meta charset='utf-8'>
+        <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+        <title>Page Title</title>
+        <meta name='viewport' content='width=device-width, initial-scale=1'>
+        <link rel="icon" href="images/lyre.jpg">
+        <link rel="stylesheet" href="login.css">
+        <script src=login.js>   </script>
+    </head>
+    <body>
+
+        <h1> Welcome to MooDuse </h1>
+        
+        <div class="icon">
+            <img src="images/test.png" height="500" class="center",align=left>
+        </div>    
+        <div class="credentials">
+            <form >
+                <br>
+                <p1> Enter your Spotify credentials below </p1>
+                <br>
+                Email account:
+                <br>
+                <input type="text" name="Email">
+                <br>
+                Password:
+                <br>
+                <input type="text" id="btn-login" name="password">
+                <br>
+                <input type="button" id="btn-login"  value="submit" >
+            </form>
+        </div>
+    </body>
+</html>
+
+<script>
+    function goToMainPage(Email, password){
+        window.location.href ="index.html"
+    }
+</script>
