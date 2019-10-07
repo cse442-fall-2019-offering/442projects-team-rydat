@@ -4,7 +4,8 @@ body{
     background-repeat: repeat;
     height:100%;
     width:99%;
-	overflow-y: hidden;
+	  overflow-y: hidden;
+    color: white;
 }
 #header{
   font-family: 'Satisfy', cursive;
@@ -69,13 +70,13 @@ input[type=text] {
 }
 li.track {
   font-family: 'Satisfy', cursive;
-  color: #FBEFEF; 
+  color: #FBEFEF;
   background-size: px;
 }
 #author{
   font-family: 'Times New Roman';
   color: #848484;
-  font-size: 14px	
+  font-size: 14px
 }
 #footer{
   clear:both;
