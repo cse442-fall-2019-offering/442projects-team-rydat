@@ -22,8 +22,8 @@ h1{
 }
 .credentials{
     font-size: 3vw;
-    background-color: blue;
     width: 60%;
+    height: 100%;
     margin-bottom: 2%;
     float: left;
 }
@@ -37,7 +37,7 @@ img{
 form{
     width:100%;
     object-fit: contain;
-    height:auto;
+    height:100vh;
     font-size: 3vw;
 }
 input{
