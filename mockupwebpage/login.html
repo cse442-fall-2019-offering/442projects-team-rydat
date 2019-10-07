@@ -18,26 +18,16 @@
             <img src="images/test.png" height="500" class="center",align=left>
         </div>    
         <div class="credentials">
-            <form >
-                <br>
-                <p1> Enter your Spotify credentials below </p1>
-                <br>
-                Email account:
-                <br>
-                <input type="text" name="Email">
-                <br>
-                Password:
-                <br>
-                <input type="text" id="btn-login" name="password">
-                <br>
-                <input type="button" id="btn-login"  value="submit" >
-            </form>
+                <p>Before you can use MooDuse you must login to Spotify first</p>
+                <button class="btn btn-primary" id="btn"  value="submit" onclick="test()"> Login to spotify Here</button>
+                <p id="trythis"></p>
+                
         </div>
     </body>
 </html>
 
 <script>
-    function goToMainPage(Email, password){
+    function goToMainPage(){
         window.location.href ="index.html"
     }
 </script>
