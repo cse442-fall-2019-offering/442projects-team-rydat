@@ -1,5 +1,7 @@
 // this link works
 // https://accounts.spotify.com/authorize?client_id=c00c658f3a8a4a29961ae9fe70ffde7e&redirect_uri=http:%2F%2Flocalhost:8888%2Fcallback&scope=user-read-private%20user-read-email&response_type=token&state=123
+// do this function uses http://jsfiddle.net/JMPerez/62wafrm7/ for reference
+
 function dothis() {
     
     function login(callback) {
