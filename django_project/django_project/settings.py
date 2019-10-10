@@ -30,8 +30,12 @@ ALLOWED_HOSTS = []
 
 # Application definition
 
+#Read if 'No changes detected' occurs: 
+#https://stackoverflow.com/questions/36153748/django-makemigrations-no-changes-detected/46361096#46361096
+
 INSTALLED_APPS = [
-    'spotify.apps.SpotifyConfig',    #added by me
+    # 'spotify.apps.SpotifyConfig',
+    'spotify',              
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -74,12 +78,33 @@ WSGI_APPLICATION = 'django_project.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/2.2/ref/settings/#databases
 
+
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.mysql',
+#         'NAME': 'test' ,           
+#         'USER': 'taktukta@cheshire.cse.buffalo.edu',
+#         'PASSWORD':'50196329' ,
+#         'HOST': ' tethys.cse.buffalo.edu' ,
+#         'PORT': '3306' ,
+#     }
+# }
+
+
+
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'nzmryuif' ,
+        'HOST': 'salt.db.elephantsql.com' ,
+        'USER': 'nzmryuif' ,
+        'PASSWORD': '0uaFFa6ygXhdUa03L4zAo8TY6EBrNiCF' ,
+        'PORT': '5432' ,
+
     }
 }
+
+
 
 
 # Password validation
