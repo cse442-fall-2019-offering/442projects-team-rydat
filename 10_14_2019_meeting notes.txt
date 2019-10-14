@@ -1,0 +1,5 @@
+-Put a task test for every task that is in review/qa.
+
+-AI - swap from multiple classifications to a binary option
+
+-Spotify Spong Categorization unassign
