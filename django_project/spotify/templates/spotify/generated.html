@@ -1,0 +1,20 @@
+{% extends "spotify/base.html" %}
+{% block content %}
+
+  {% if playlist %}
+    <h1> Enjoy your {{playlist}} playlist! </h1>
+  {% else %}
+    <h1> Please enter a valid emotion! </h1>
+  {% endif %}
+
+  {% for song in songs %}
+
+    <ul>
+      <li> <h1> {{ song.title }} </h1>
+        <h2> {{ song.artist }} </h2> </li>
+    </ul>
+    {% endfor %}
+
+    <button onclick="location.href='{% url 'MooDuse-main' %}'" type="button"> Return to Main </button>
+
+{% endblock content %}

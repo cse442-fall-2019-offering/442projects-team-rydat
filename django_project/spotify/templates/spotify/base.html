@@ -1,0 +1,22 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="{% static 'spotify/styles.css' %}">
+    <link rel="icon" href="{% static 'spotify/images/lyre.jpg' %}">
+
+    {% if title %}
+      <title> MooDuse - {{ title }}</title>
+    {% else %}
+      <title> MooDuse </title>
+    {% endif %}
+  </head>
+  <body>
+
+    {% block content %} {% endblock %}
+
+  </body>
+</html>
