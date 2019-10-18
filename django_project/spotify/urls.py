@@ -17,6 +17,10 @@ from django.urls import path
 from . import views
 
 urlpatterns = [
-    path('', views.home,name='spotify-home'),   #http://localhost:8000/spotify/
-    # path('about/', views.about,name='spotify-about'),    #http://localhost:8000/spotify/about/
+    path('', views.home,name='spotify-home'),   #http://localhost:8000
+    path('login', views.login),   #http://localhost:8000/login   
+    path(r'^', views.button,name='spotify-button'),   
+
+
+
 ]

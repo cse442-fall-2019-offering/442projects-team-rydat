@@ -19,5 +19,8 @@ from django.urls import path,include
 urlpatterns = [
     path('admin/', admin.site.urls),   # for admins
     path('', include('spotify.urls')), # This is our homepage.
+    path('login/', include('spotify.urls')), 
+
+
 
 ]

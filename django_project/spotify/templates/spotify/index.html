@@ -1,12 +1,15 @@
-{% load static %}   <!-- need this line so we can load our css file from static directory-->
+<!-- load static first  -->
+{% load static %}  
+
 <html>
 <head>
   <!-- <meta name="viewport" content="width=device-width, initial-scale=1"> -->
   <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1" />
 
   <title>MooDuse</title>
-  <link rel="icon" href="images/lyre.jpg">
+  <link rel="icon" href=" {% static 'spotify/images/lyre.jpg' %}">    
   <link rel="stylesheet" href="{% static 'spotify/styles.css' %}">
+  <!-- then link to specific css-->
 </head>
 
 <body>
@@ -15,15 +18,16 @@
     <div id="lefttext">
 	<br>
       Hello, Alan P. 
-	  <br>
+    <br>
+   
       <div style="font-size: 12px; color: #D7DF01">-Not Alan? Log off</div>
     </div>
   
   <br>
   <div id="header" >
-    MooDuse
+    <!-- MooDuse -->
   </div>
-  <img src="{% static "spotify/images/double note.jpg" %}" class = "responsive" height="35" size="40" align="right" onclick="openRight()"/>
+  <img src="{% static 'spotify/images/double note.jpg' %}" class = "responsive" height="35" size="40" align="right" onclick="openRight()"/>
    <!-- Source : https://docs.djangoproject.com/en/dev/howto/static-files/#basic-usage -->
   <div class="main">
     How are you feeling?
