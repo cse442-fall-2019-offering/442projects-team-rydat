@@ -4,7 +4,7 @@ import pickle
 
 # Keras imports
 from keras import Input
-from keras.layers import Dense, LSTM, Bidirectional, concatenate
+from keras.layers import Dense, LSTM, Bidirectional, concatenate, Dropout
 from keras.models import Sequential, load_model, Model
 from keras.utils import to_categorical
 from keras.metrics import top_k_categorical_accuracy
@@ -14,14 +14,14 @@ from attention import Attention
 
 class Emotional_Analysis_Model():
 
-    def __init__(self, model_path, retrain=False):
+    def __init__(self, model_path, input_size=1, retrain=False):
         self.model_path = model_path
-        self.input_size = 1 # One sequence at a time
-        self.num_candidates = 5
+        self.input_size = input_size
+        self.num_candidates = 2
         self.window_size = 30 # Size of sequences
         self.hidden_size = 64 # Making shit up
-        self.num_hidden_layers = 1 # Making more shit up, see how it goes
-        self.num_classes = 13 # Number of emotion labels
+        self.num_hidden_layers = 2 # Making more shit up, see how it goes
+        self.num_classes = 1 # Number of emotion labels
         self.num_epochs = 30 # Train for 30 epochs
 
         # Defines custom metric for comparing accuracy against the top k most probable predictions
@@ -29,30 +29,30 @@ class Emotional_Analysis_Model():
         self.topk_acc.__name__ = 'topk_acc'
 
         if retrain:
-            if "attention" or "Attention" in model_path:
-                self.model = self.create_Keras_model("attention")
+            if "sequence" in model_path.lower():
+                self.model = self.create_Keras_model("sequence")
             else:
-                self.model = self.create_Keras_model("basic")
+                self.model = self.create_Keras_model("bag_of_words")
         else:
             self.model = load_model(model_path, custom_objects={"Attention":Attention, "topk_acc":self.topk_acc})
 
 #######################################################################################################################
 
     def create_Keras_model(self, type):
-        if type == "basic":
+        if type == "bag_of_words":
             model = Sequential()
-            model.add(LSTM(self.window_size, return_sequences=True, input_shape=(self.window_size, self.input_size),
-                           activation="relu"))
+            model.add(Dense(self.input_size, activation="sigmoid"))
 
             for i in range(self.num_hidden_layers):
-                model.add(LSTM(self.hidden_size, return_sequences=False, activation="relu"))
+                model.add(Dense(self.hidden_size, activation="sigmoid"))
+                model.add(Dropout(0.2))
 
-            model.add(Dense(self.num_classes, activation="softmax"))
-            model.compile(optimizer="adam", loss="categorical_crossentropy", metrics=["accuracy", self.topk_acc])
+            model.add(Dense(self.num_classes, activation="sigmoid"))
+            model.compile(optimizer="SGD", loss="binary_crossentropy", metrics=["accuracy", self.topk_acc])
 
             return model
 
-        if type == "attention":
+        if type == "sequence":
             input = Input(shape=(self.window_size, self.input_size))
             lstm = Bidirectional(LSTM(self.hidden_size,
                                       return_sequences=True,
@@ -85,7 +85,7 @@ class Emotional_Analysis_Model():
         else:
             self.model.fit(train_data, train_labels, batch_size=128, verbose=1, epochs=self.num_epochs)
 
-        print("Trained DeepLog model")
+        print("Trained Emotion model")
 
         self.model.save(self.model_path)
         print("Saved model as: " + self.model_path)
@@ -104,22 +104,3 @@ class Emotional_Analysis_Model():
 
 #######################################################################################################################
 
-if __name__ == '__main__':
-    EAM = Emotional_Analysis_Model("first_try_attention", retrain=True)
-
-    with open("padded_data.pkl", "rb") as pk_file:
-        data = np.array(pickle.load(pk_file))
-    print(data)
-
-    with open("padded_labels.pkl", "rb") as pk_file:
-        labels = pickle.load(pk_file)
-
-    labels = to_categorical(labels, EAM.num_classes)
-    data = np.reshape(data, (data.shape[0], data.shape[1], 1))
-    data = data/2801
-
-    print(data)
-
-    train_data, train_labels, val_data, val_labels = EAM.split_data(data, labels, 0.2)
-
-    EAM.train(train_data, train_labels, validation_data=val_data, validatation_labels=val_labels)
