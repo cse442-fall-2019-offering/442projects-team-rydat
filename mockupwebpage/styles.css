@@ -53,10 +53,10 @@ input[type=submit] {
   right: 0;
   background-color: #2A0A1B;
   overflow-x: hidden; /* Disable horizontal scroll */
-  padding-top: 60px; /* Place content 60px from the top */
   transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
+  overflow-y: hidden;
 }
-.rightside .closerightbtn {
+.closerightbtn {
   position: absolute;
   top: 10;
   right: 10px;
@@ -86,7 +86,8 @@ li.track {
   width: 100%;
 }
 #sidebar-left, #main, #sidebar-right{
-  min-height: 500px;
+  width = 100%
+  
 }
 #header, #main, #footer {
   text-align: center;
