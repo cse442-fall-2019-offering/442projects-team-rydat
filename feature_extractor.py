@@ -16,10 +16,16 @@ class Extractor():
             for word in word_tokenize(line):
                 fdist[word] += 1
 
+        print(len(fdist))
+
         common = fdist.most_common(topk)
         vocab = {}
-        for i, pair in enumerate(common):
-            vocab[pair[0]] = i+1
+        i = 0
+        for pair in common:
+            vocab[pair[0]] = i
+            i += 1
+
+        vocab["UNK"] = i
 
         return vocab
 
@@ -27,9 +33,11 @@ class Extractor():
 
     def encode_data_with_features(self, vocab):
         encoded_data = []
-        for line in self.input:
-            newline = [vocab[word] if word in vocab else 2801 for word in word_tokenize(line)]
+        for i, line in enumerate(self.input):
+            newline = [vocab[word] if word in vocab else len(vocab.keys())-1 for word in word_tokenize(line)]
             encoded_data.append(newline)
+            if i%10000 == 0:
+                print("Encoding data: line " + str(i))
 
         return encoded_data
 
@@ -41,3 +49,6 @@ class Extractor():
             wr = csv.writer(csv_file, quoting=csv.QUOTE_ALL)
             for element in vocab:
                 wr.writerow(element)
+
+#######################################################################################################################
+

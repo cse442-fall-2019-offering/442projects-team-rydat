@@ -21,6 +21,7 @@ class Preprocess():
                       "can't" : "cannot",
                       "couldn't" : "could not",
                       "didn't" : "did not",
+                      "didn" : "did not",
                       "doesn't" : "does not",
                       "don't" : "do not",
                       "hadn't" : "had not",
@@ -75,12 +76,18 @@ class Preprocess():
                       "we'll":"we will",
 }
 #######################################################################################################################
+    """ Separates a phrase into a list of separate words, called tokens
+    
+        Takes in data line by line
+    """
 
     def tokenize(self, line):
         tokens = nltk.tokenize.word_tokenize(line)
         return tokens
 
 #######################################################################################################################
+
+    """ Converts a line to lowercase, removes all hashtags and mentions"""
 
     def normalize(self, line):
         # Step 1: convert line to lowercase
@@ -92,17 +99,21 @@ class Preprocess():
         reformed = " ".join(reformed_line)
 
         # Step 3: Fucking hashtags and @'s
-        words = lowercase.split()
+        words = reformed.split()
         better = ["" if "#" in word or "@" in word else word for word in words]
         return " ".join(better)
 
 #######################################################################################################################
+
+    """ Removes all punctuation from a phrase, only keeps alphabetical characters """
 
     def remove_punctuation(self, tokens):
         words = [word for word in tokens if word.isalpha()]
         return words
 
 #######################################################################################################################
+
+    """ General process for cleaning data. Goes through normalization step, then passed to gensim lemmatize funtion """
 
     def clean_data(self):
         tags_n_words = []
@@ -116,10 +127,14 @@ class Preprocess():
             # Step 3: Lemmatize
             lemma = lemmatize(normal)
             tags_n_words.append(lemma)
+            if i%10000 == 0:
+                print("Cleaning data: line " + str(i))
 
         return self.separate_tags_n_words(tags_n_words)
 
 #######################################################################################################################
+
+    """ Separates words from their part-of-speech tag """
 
     def separate_tags_n_words(self, tags_n_words):
         words = []
@@ -138,6 +153,12 @@ class Preprocess():
 
 #######################################################################################################################
 
+    """ Adds 0's to the end of a sequence to make sure that each sequence is the same length.
+        Also encodes labels into numerical form
+     
+        Only used for sequence model
+    """
+
     def pad_sequences(self, encoded_data):
         if len(self.label_encodings.keys()) == 0:
             self.get_label_encodings()
@@ -154,6 +175,36 @@ class Preprocess():
 
 #######################################################################################################################
 
+
+
+#######################################################################################################################
+
+    """ Enocdes labels for Bag of Words model 
+        Throws out any data lines with less than 3 words
+        
+    """
+
+
+    def encode_labels(self, vectorized_data):
+        #if len(self.label_encodings.keys()) == 0:
+        #    self.get_label_encodings()
+        encoded = []
+        for i, line in enumerate(vectorized_data):
+            if i%10000 == 0:
+                print("Checking lengths: line " + str(i))
+            if sum(line) < 3:
+                vectorized_data.remove(line)
+            else:
+        #        encoded.append((line, self.label_encodings[self.labels[i]]))
+                encoded.append((line, self.labels[i]))
+        return encoded
+
+#######################################################################################################################
+
+    """ Determines the possible label encodings from all labels 
+        Ex. 13 possible emotions get mapped to 13 labels.
+    """
+
     def get_label_encodings(self):
         possible_labels = set()
         for label in self.labels:
@@ -163,29 +214,37 @@ class Preprocess():
 
 #######################################################################################################################
 
+    """ Converts dataset in bag of words vector representation, where each value in the vector represents
+        how many times that particular word appears in the data line.
+        
+        Only used for bag of words model.
+    """
+
+    def prep_bag_of_words(self, vocabulary, data):
+        words = vocabulary.keys()
+        v_size = len(words)
+        vectorized_data = []
+        for i, line in enumerate(data):
+            if i % 10000 == 0:
+                print("Bagging words: line " + str(i))
+            vectorized_data.append([0]*(v_size))
+            for word in words:
+                vectorized_data[i][vocabulary[word]] = line.count(vocabulary[word])
+
+        return vectorized_data
 
 
-if __name__ == '__main__':
+#######################################################################################################################
 
-    loader = Loader("raw_data")
-    train_data, train_labels = loader.read_twitter_data("twitter_text_emotion.csv")
+    def reduce_by_label(self, acceptable_labels):
+        reduced_labels = []
+        reduced_data = []
+        for i, line in enumerate(self.data):
+            if self.labels[i] in acceptable_labels:
+                reduced_data.append(line)
+                reduced_labels.append(self.labels[i])
 
-    preprocess = Preprocess(train_data, train_labels)
+        self.labels = reduced_labels
+        self.data = reduced_data
 
-    clean = preprocess.clean_data()
-
-    extractor = Extractor(clean)
-    vocab = extractor.get_features(2800)
-    encoded = extractor.encode_data_with_features(vocab)
-    padded_pairs = preprocess.pad_sequences(encoded)
-    padded_data = []
-    padded_labels = []
-    for pair in padded_pairs:
-        padded_data.append(pair[0])
-        padded_labels.append(pair[1])
-
-    with open("padded_data.pkl", "wb") as pk_file:
-        pickle.dump(padded_data, pk_file)
-
-    with open("padded_labels.pkl", "wb") as pk_file:
-        pickle.dump(padded_labels, pk_file)
+ ######################################################################################################################
