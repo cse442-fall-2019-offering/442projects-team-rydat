@@ -1,0 +1,28 @@
+Prediction value: 0.50
+
+'Sugar on My Tongue - 2005 Remaster', '1w3IeWPxVHuw0gyXcGV2pN', 0.501
+'The Wreck of the Edmund Fitzgerald', '536L9C0N7vhYdibCJx3cI2', 0.497
+'Undertow - 2007 - Remaster', '5JXoI5ZK5qNTZA0C4MQ4ba', 0.495
+'Hard Drive', '4xx37dCWh0zxsWsq4zg6GF', 0.506
+'Wasted Time - 2013 Remaster', '0Q5YtY85lz5n7rQkeMNpoe', 0.492
+'No Reply at All - 2007 Remaster', '0aeUuMypcIbr5y2oQUKyBV', 0.508
+'All of My Life - 2016 Remaster', '1znOBqj7UdG0CZcOJMn5zu', 0.49
+'Wasted Time - 2013 Remaster', '0Q5YtY85lz5n7rQkeMNpoe', 0.49
+'Darklands', '7r1i1TZUGZQDxR5QHX4Mmx', 0.487
+'Desperado (2013 Remaster)', '2TjnCxxQRYn56Ye8gkUKiW', 0.486
+'If You Could Read My Mind', '0fjYN9BylnRXMA3or3QSld', 0.516
+'Life During Wartime - 2005 Remaster', '7CqleiaEqHVazV19P532X9', 0.517
+'The Hero (From "One-Punch Man")', '5bpfkg1uxz6Xu711Zqg1Jm', 0.481
+'A Trick Of The Tail - Remaster 2007', '17cqmUxXC6pax1n6ueg2Hg', 0.519
+'Pretzel Logic', '2TDqa2yNF9qhSmP8gqcleE', 0.476
+'We Are the Crystal Gems (Full Theme Song)', '3W0MG9Sr4qEgu4xHcOp928', 0.525
+'Babylon Sisters', '1YNhmLrfv9fOyv7ClZ0Gre', 0.474
+'Shinzou Wo Sasageyo (Attack on Titan)', '642Zd1NC6fLzbLhjQ8ykcZ', 0.526
+'Vs. Susie', '5ydKiJ69LWOzfSya9ojhE4', 0.473
+'Death By Glamour', '7nnptgmho81M6mKJJFEKrh', 0.527
+'One of These Nights - 2013 Remaster', '608xszaAxVh4m7NcKJiAbF', 0.532
+'Get You in the Mood - 45 RPM Version; 2008 Remaster', '0DwwvtvH6SQLEi7pGOiypa', 0.532
+'Metal Crusher', '6lKi8IwpOg4twOFMFDK7UB', 0.534
+'Outlaw Man - 2013 Remaster', '798K1FlIgRmuIIJeSbmmA0', 0.541
+'Josie', '2P6eZ3eCyWVhEhGNqMFBLv', 0.541
+'Tentative Decisions - 2005 Remaster', '4PJH0ivQdJw5MNMtg4uztn', 0.458
