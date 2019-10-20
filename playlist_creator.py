@@ -98,7 +98,7 @@ if __name__ == '__main__':
         text_to_eval = sys.argv[1]
         token = sys.argv[2]
     else:
-        text_to_eval = "This better work or I'll be real fucking sad."
+        text_to_eval = "I'm so happy it actually works."
         token = None
 
     # read in the saved model structure
@@ -134,10 +134,9 @@ if __name__ == '__main__':
         token =loggingIn.getToken(loggingIn.REDIRECT_URI)
     except NoTokenError:
         loggingIn.login()
-        print("please enter the url in the redirected page")
         # Below line no longer works for some reason. Must run once, copy new URL, replace variable below and run again.
         # url = input()
-        url = "https://www-student.cse.buffalo.edu/CSE442-542/2019-Fall/cse-442j/?code=AQB_VviLA0e0acxL2poPs4eg8GBgGigzd57kD4o1XFs57vFy06TC07RD-fYLG9NzRdy5fPcaFBSBzru76Q2tz0926Ak4DgFLddO0P6gtpGbXjSApk8x9CN1zZa9ROHGprlNtTLFrZ-yLYvPrWhQK6feh_TkKfZVxCEfw-HC3Q3cIY1uHbcodeI-iYFNl-NKAaYbYOYu5WxHfoiefcTJGfmuURJpdSJEzTZ6Q65-8f1FuQ7ttzGsa9Y3jS0VabaxQxZcJ3c1Bth_G90XBzoAEeB83nypbQ9w6R2BuRzxE0pmHVLuX9et9OWMkyt9anAo6jXTa4RPAYAt3ViVzdAI7x8jKPYkDC5ECi2LxuQoR3TCh8E2icCekuhDcIyEdEwlYE-0nKM7oh3BL3lhlUiWC0P0CcrFS_hT7aX5r-xgQ6_rhHHyPQsYv4HCppwodCwlrvXoqe5WIqvpDdNHqJBD1uT3sCjgakc7UQfPY_kXAbOgXOyulrkk"
+        url = "https://www-student.cse.buffalo.edu/CSE442-542/2019-Fall/cse-442j/?code=AQBA7FnlO4JJqCFQ__pz5oO23mvHQRFIvrfkoqh3r0WbgrfMcXRdQEgbUTx5O_6M0rpQtIdFkhygucmk61cvYPpjR9mYvQWcLyIuQfgiiBFWFviiA0glnMbJlRw9o3B_ko6WMSPnytoiYqKGdPn-sMP-RRadW8iEh-7vkg4Ovfjz0gNPerjmFu1p0ynP1WDnuEE7bF-cbU2zzoR18ncLocCjOLSlWMxDn0NKGQRllaIEELFrUMbHRCXDXXnEEca-bbC3Y1rIfgm5gPOF-cwZe46NsF5YbwclMBhcSv43x2-U80GOa0tFdLDEQtRSxVIh9C3bbKKWkGKfPGyXB_53LJBP5DC5OeSk6vpa33JylUL9udrqDf4N2AM615-yLcknstlW77-R6PPuqtHniKz7MD4FcCsmZw6mWeb_U14daOl-nCboTAa3Jtt3NqbScS0MbrpET4pu-1g4GuT7mSOR0uZfWMEYrFo1kj9qbsoHcH-430xxSgA"
         token =loggingIn.getToken(url)
 
     sp =spotipy.client.Spotify(auth=token['access_token'])
@@ -188,10 +187,10 @@ if __name__ == '__main__':
     bunches = sorted(bunches, key=lambda bunch: bunch[2])
 
     # Choose the 30 tracks with valence values closest to the sentiment value
-    playlist_tracks = nsmallest(30, bunches, key=lambda bunch: abs(pred - .10))
+    playlist_tracks = nsmallest(30, bunches, key=lambda bunch: abs(bunch[2] - pred))
 
     # Create a new playlist
-    playlist = sp.user_playlist_create(sp.me()["id"], "test", public=True)
+    playlist = sp.user_playlist_create(sp.me()["id"], "Happy - Project is Working", public=True)
 
     # Get the ID for future use
     playlist_id = playlist["id"]
