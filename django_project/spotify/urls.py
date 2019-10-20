@@ -1,9 +1,10 @@
-from django.conf.urls import url
+from django.urls import path
 from . import views
 
 urlpatterns = [
-    url(r'^$', views.login, name='MooDuse-login'),
-    url(r'^main/', views.main, name='MooDuse-main'),
-    url(r'^playlist-generated/', views.generated, name='MooDuse-generated'),
-
+    path('', views.login, name='mooduse-login'), # our login is created in views.py where login is defined
+    path('home/', views.home, name='mooduse-home'),
+    path('close/', views.loginbutton,name='login-button'),
+    path('playlist-generated/', views.generated, name='mooduse-generated'),
+    path('logged-out/', views.logoutbutton, name='logout-button'),
 ]

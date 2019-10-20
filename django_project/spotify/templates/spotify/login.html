@@ -1,8 +1,20 @@
 {% extends "spotify/base.html" %}
+{% load static %}
+
+
 {% block content %}
 
-  <h1> Welcome! Please log in. </h1>
-  <button onclick="location.href='{% url 'MooDuse-main' %}'" type="button">
-       Connect with Spotify </button>
+  <link rel="stylesheet" href="{% static 'spotify/login.css' %}">
+
+  <h1> Welcome to MooDuse </h1>
+
+  <div class="icon">
+    <img src="{% static 'spotify/images/test.png' %}" height="500" class="center",align=left>
+  </div>
+
+  <div class="credentials">
+    <p>Before you can use MooDuse, you must login to Spotify first</p>
+    <button class="btn btn-primary" id="btn" value="submit" onclick="location.href = '{% url 'login-button' %}' "> </button>
+  </div>
 
 {% endblock content %}
