@@ -13,23 +13,26 @@
 	<br>
       Hello, Alan P. 
 	  <br>
-      <div style="font-size: 12px; color: #D7DF01">-Not Alan? Log off</div>
+      <div style="font-size: 12px; color: #D7DF01">-Not you? <button id="logout" onclick="logout()">logout here</button></div>
     </div>
   </div>
   <br>
   <div id="header">
     MooDuse
+  </div >
+  <div id="playlistNav"  align="right" onclick="openRight()">
+    <img src="images/double note.jpg" id="doubleNote" align="left" >
+    <div id="playlistinstruction" align="left">click here to view current playlist </div>
   </div>
-  <img src="images/double note.jpg" height="35" size="40" align="right" onclick="openRight()">
   <div id="main">
     How are you feeling?
-    <form>
+    <form></form>
 	<br>
-      <input type="text" name="feels" placeholder="...">
+      <input type="text" name="feels" placeholder="enter how you want to feel..." autocomplete="off">
     </form>
   <br><br><br>
   <iframe src="https://open.spotify.com/embed/playlist/3iDPeNFhDWhCrETbZXkoOV" width="600" height="80" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
-  </div>
+  </div> 
   
 </body>
 </html>
@@ -58,5 +61,8 @@
 
   function closeRight() {
     document.getElementById("sidebar-right").style.width = "0";
+  }
+  function logout(){
+    window.location.href ="login.html"
   }
   </script>
