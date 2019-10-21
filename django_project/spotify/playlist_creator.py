@@ -7,6 +7,8 @@ from heapq import nsmallest
 from keras.models import model_from_json
 import os
 import sys
+import datetime
+from pytz import timezone
 
 def convert_text_to_index_array(text):
 
@@ -90,7 +92,6 @@ def remove_appos(text):
     reformed = " ".join(reformed_line)
     return reformed
 
-
 def dakota_creation(text_to_eval, token):
 
     # read in the saved model structure
@@ -98,11 +99,11 @@ def dakota_creation(text_to_eval, token):
     json_file = open(model_path, 'r')
     loaded_model_json = json_file.read()
     json_file.close()
-
     # and create a model from that
-    model = model_from_json(loaded_model_json)
 
+    model = model_from_json(loaded_model_json)
     # and weight the nodes with your saved values
+
     weights_path = os.path.abspath("spotify/model.h5")
     model.load_weights(weights_path)
 
@@ -127,7 +128,6 @@ def dakota_creation(text_to_eval, token):
 
     track_names = []
     track_ids = []
-    track_valences = []
     bunches = []
 
     # Get tracks for artists 0 - 4
@@ -135,21 +135,18 @@ def dakota_creation(text_to_eval, token):
     for track in recommendations["tracks"]:
         track_names.append(track["name"])
         track_ids.append(track["id"])
-        track_valences.append(["valence"])
 
     # Get tracks for artists 5 - 9
     recommendations = sp.recommendations(seed_artists=artistList[5:10], limit=100)
     for track in recommendations["tracks"]:
         track_names.append(track["name"])
         track_ids.append(track["id"])
-        track_valences.append(["valence"])
 
     # Get tracks for artists 10 - 14
     recommendations = sp.recommendations(seed_artists=artistList[10:14], limit=100)
     for track in recommendations["tracks"]:
         track_names.append(track["name"])
         track_ids.append(track["id"])
-        track_valences.append(["valence"])
 
     # Get audio features of recommended tracks in groups of 50 (spotipy maximum)
     # Add track names, ids, and valences to tuples
@@ -159,16 +156,18 @@ def dakota_creation(text_to_eval, token):
         features = sp.audio_features(track_ids[i:upper_bound])
         upper_bound += 50
         for j, feature in enumerate(features):
-            bunches.append((track_names[j], track_ids[j], feature["valence"]))
-
-    # Sort tuples by valence values
-    bunches = sorted(bunches, key=lambda bunch: bunch[2])
+            bunches.append((track_names[j], feature["id"], feature["valence"]))
 
     # Choose the 30 tracks with valence values closest to the sentiment value
-    playlist_tracks = nsmallest(30, bunches, key=lambda bunch: abs(pred - .10))
+    playlist_tracks = nsmallest(30, bunches, key=lambda bunch: abs(bunch[2] - pred))
+    #print(pred)
+    #for bunch in playlist_tracks:
+        #print(bunch)
 
     # Create a new playlist
-    playlist = sp.user_playlist_create(sp.me()["id"], "test", public=True)
+    tz = timezone('US/Eastern')
+    dt = datetime.datetime.now(tz)
+    playlist = sp.user_playlist_create(sp.me()["id"], "MooDuse Generation - " + str(dt), public=True)
 
     # Get the ID for future use
     playlist_id = playlist["id"]

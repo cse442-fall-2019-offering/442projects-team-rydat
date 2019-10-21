@@ -4,8 +4,8 @@ from spotify.login_page import Login
 import spotipy
 from spotify.playlist_creator import dakota_creation
 
-
 userToken = None;
+sp = None;
 
 def login(request):
     return render(request, 'spotify/login.html', {'title': 'Login'})
@@ -15,6 +15,7 @@ def home(request):
     l = Login()
     global userToken
     userToken = l.getToken(full_url)
+    global sp
     sp = spotipy.client.Spotify(auth=userToken['access_token'])
 
     context = {
@@ -42,16 +43,23 @@ def logoutbutton(request):
     }
     return render(request, 'spotify/logout.html', context)
 
-
 def generated(request):
-    input = request.POST.get('feels')
     global userToken
+    global sp
+    input = request.POST.get('feels')
+    if input is '':
+        context = {
+            'emotion': None,
+            'token' : userToken,
+            'ouruser' : str(sp.current_user()['display_name'])
+        }
+    else:
+        resulting_id = dakota_creation(input, userToken)
+        context = {
+            'emotion': input,
+            'token': userToken,
+            'playlist' : resulting_id,
+            'ouruser' : str(sp.current_user()['display_name'])
 
-    resulting_id = dakota_creation(input, userToken)
-
-    context = {
-        'emotion': input,
-        'token': userToken,
-        'playlist' : resulting_id
-    }
+            }
     return render(request, 'spotify/generated.html', context)

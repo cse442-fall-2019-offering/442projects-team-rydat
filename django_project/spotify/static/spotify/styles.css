@@ -1,5 +1,5 @@
-html {
-  overflow-x: hidden;
+h1,h2{
+  color: white;
 }
 body{
   background-image:url('images/visual.gif');
@@ -7,7 +7,8 @@ body{
   background-repeat: repeat;
   height:100%;
   width:99%;
-overflow-y: hidden;
+  overflow-y: hidden;
+  overflow-x: hidden;
 }
 #header{
 font-family: 'Satisfy', cursive;

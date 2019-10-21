@@ -7,4 +7,5 @@ urlpatterns = [
     path('close/', views.loginbutton,name='login-button'),
     path('playlist-generated/', views.generated, name='mooduse-generated'),
     path('logged-out/', views.logoutbutton, name='logout-button'),
+    path('again/', views.login, name='newplaylist-button'),
 ]
