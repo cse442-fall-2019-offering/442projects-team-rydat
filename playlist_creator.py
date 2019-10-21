@@ -98,7 +98,7 @@ if __name__ == '__main__':
         text_to_eval = sys.argv[1]
         token = sys.argv[2]
     else:
-        text_to_eval = "I'm so happy it actually works."
+        text_to_eval = "kill me sad funeral"
         token = None
 
     # read in the saved model structure
@@ -136,7 +136,7 @@ if __name__ == '__main__':
         loggingIn.login()
         # Below line no longer works for some reason. Must run once, copy new URL, replace variable below and run again.
         # url = input()
-        url = "https://www-student.cse.buffalo.edu/CSE442-542/2019-Fall/cse-442j/?code=AQBA7FnlO4JJqCFQ__pz5oO23mvHQRFIvrfkoqh3r0WbgrfMcXRdQEgbUTx5O_6M0rpQtIdFkhygucmk61cvYPpjR9mYvQWcLyIuQfgiiBFWFviiA0glnMbJlRw9o3B_ko6WMSPnytoiYqKGdPn-sMP-RRadW8iEh-7vkg4Ovfjz0gNPerjmFu1p0ynP1WDnuEE7bF-cbU2zzoR18ncLocCjOLSlWMxDn0NKGQRllaIEELFrUMbHRCXDXXnEEca-bbC3Y1rIfgm5gPOF-cwZe46NsF5YbwclMBhcSv43x2-U80GOa0tFdLDEQtRSxVIh9C3bbKKWkGKfPGyXB_53LJBP5DC5OeSk6vpa33JylUL9udrqDf4N2AM615-yLcknstlW77-R6PPuqtHniKz7MD4FcCsmZw6mWeb_U14daOl-nCboTAa3Jtt3NqbScS0MbrpET4pu-1g4GuT7mSOR0uZfWMEYrFo1kj9qbsoHcH-430xxSgA"
+        url = "https://www-student.cse.buffalo.edu/CSE442-542/2019-Fall/cse-442j/?code=AQAVzDvWQStmE9jGd5ZuB9bEbW4kWW30oVMPlqJ8Yuf_OK3DEtVtk7xqRJImmd8QdOsON72XLmyamVjfNxfT8yJKpiV-APXb6sQRkfH8svlccnBU33bNxuHoS2-UQilbNHfNE1F9wFd04WFNK9HXCEyfuDW07B_qYrRsPqSYmWEmYO06euAhI3vgwS2-sLSAQ3mj5yPVEXAOsOHForjM-ryxPtNzPn9U8W9f5yj5ysscO782tTTCEs7zke18n9BtrM6aE7iMkwA5Tvfkj_4QldilZe5oGtI-m5tUDVHj0khex7PLeZW5HDQiq3w4aGaTt_l_LB7DjXjesz6CKWDJusPA6uG-5y2zQEF1TOGSgYgUPJbNWREo987fIL2Wg9RZ1oP63PY7SWA90Lsh2ZBS_GafDsXkwHDO3cEZ7p0AyAI66LJyFhhJBirlvmC7dIeR762eA-SMySPIEx9EAT1vCW5y5HJuLGONI35qN5m1-Bd3hQhfI5U"
         token =loggingIn.getToken(url)
 
     sp =spotipy.client.Spotify(auth=token['access_token'])
@@ -149,7 +149,6 @@ if __name__ == '__main__':
 
     track_names = []
     track_ids = []
-    track_valences = []
     bunches = []
 
     # Get tracks for artists 0 - 4
@@ -157,21 +156,18 @@ if __name__ == '__main__':
     for track in recommendations["tracks"]:
         track_names.append(track["name"])
         track_ids.append(track["id"])
-        track_valences.append(["valence"])
 
     # Get tracks for artists 5 - 9
     recommendations = sp.recommendations(seed_artists=artistList[5:10], limit=100)
     for track in recommendations["tracks"]:
         track_names.append(track["name"])
         track_ids.append(track["id"])
-        track_valences.append(["valence"])
 
     # Get tracks for artists 10 - 14
     recommendations = sp.recommendations(seed_artists=artistList[10:14], limit=100)
     for track in recommendations["tracks"]:
         track_names.append(track["name"])
         track_ids.append(track["id"])
-        track_valences.append(["valence"])
 
     # Get audio features of recommended tracks in groups of 50 (spotipy maximum)
     # Add track names, ids, and valences to tuples
@@ -181,16 +177,16 @@ if __name__ == '__main__':
         features = sp.audio_features(track_ids[i:upper_bound])
         upper_bound += 50
         for j, feature in enumerate(features):
-            bunches.append((track_names[j], track_ids[j], feature["valence"]))
-
-    # Sort tuples by valence values
-    bunches = sorted(bunches, key=lambda bunch: bunch[2])
+            bunches.append((track_names[j], feature["id"], feature["valence"]))
 
     # Choose the 30 tracks with valence values closest to the sentiment value
     playlist_tracks = nsmallest(30, bunches, key=lambda bunch: abs(bunch[2] - pred))
+    #print(pred)
+    #for bunch in playlist_tracks:
+        #print(bunch)
 
     # Create a new playlist
-    playlist = sp.user_playlist_create(sp.me()["id"], "Happy - Project is Working", public=True)
+    playlist = sp.user_playlist_create(sp.me()["id"], text_to_eval, public=True)
 
     # Get the ID for future use
     playlist_id = playlist["id"]
