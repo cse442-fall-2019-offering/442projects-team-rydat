@@ -1,0 +1,15 @@
+{% extends "spotify/base.html" %}
+{% block content %}
+  <div id="header"> MooDuse </div>
+
+  <div id="main">
+    How are you feeling today?
+    <form method="POST" action = "{% url 'MooDuse-generated' %}">
+      {% csrf_token %}
+      <input type="text" name="feels" />
+      <input type="submit" value="Generate playlist" />
+    </form>
+    <button onclick="location.href='{% url 'MooDuse-login' %}'" type="button"> Log out </button>
+  </div>
+
+{% endblock content %}
