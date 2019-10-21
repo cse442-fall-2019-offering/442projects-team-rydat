@@ -1,0 +1,46 @@
+Oh thank god
+Score: 0.8405415
+positive sentiment; 84.054148% confidence
+--------------------------------------------
+It finally works!
+Score: 0.99671423
+positive sentiment; 99.671423% confidence
+--------------------------------------------
+I was beginning to get worried
+Score: 0.032916296
+negative sentiment; 96.708375% confidence
+--------------------------------------------
+This was trained with 80% validation accuracy.
+Score: 0.99933666
+positive sentiment; 99.933666% confidence
+--------------------------------------------
+So hopefully it works well enough
+Score: 0.91360873
+positive sentiment; 91.360873% confidence
+--------------------------------------------
+At the very least we'll have some cop out phrases.
+Score: 0.83190155
+positive sentiment; 83.190155% confidence
+--------------------------------------------
+These should work well for the presentation
+Score: 0.60417044
+positive sentiment; 60.417044% confidence
+--------------------------------------------
+I want to die
+Score: 0.02277596
+negative sentiment; 97.722399% confidence
+--------------------------------------------
+I feel great
+Score: 0.78058827
+positive sentiment; 78.058827% confidence
+--------------------------------------------
+'331' not in training corpus; ignoring.
+I failed my CSE 331 Exam
+Score: 0.026879432
+negative sentiment; 97.312057% confidence
+--------------------------------------------
+'hertz' not in training corpus; ignoring.
+Dr. Hertz is cool!
+Score: 0.97493887
+positive sentiment; 97.493887% confidence
+--------------------------------------------

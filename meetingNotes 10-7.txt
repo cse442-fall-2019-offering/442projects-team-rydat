@@ -1,0 +1,28 @@
+meeeting notes  from 10/7/19
+
+
+We need to make sure to create tasks for
+every assigned User Story and assign those
+tasks to ourselves
+
+We will not be penalized for using the Django database vs the one provided.
+Luke encouraged us to use the Django data base
+
+Taktuk was assigned the task of Linking user autentication 
+
+we need Tasks Test to be confirmed/done
+before before moving them from review/QA to
+done.
+
+User stories and acceptance tests are not techincal and are for the client.
+
+Tasks and Task test are fully technical and 
+are for the software engineers. 
+ex "running some script in some directory"
+
+we can only assign ourselves user stories 
+only if they are absolutely necessary for
+the sprint. We can assign ourselves new tasks freely though.
+
+Luke was made aware of the potential issue
+with extracting emotional context
