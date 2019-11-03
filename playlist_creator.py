@@ -98,7 +98,7 @@ if __name__ == '__main__':
         text_to_eval = sys.argv[1]
         token = sys.argv[2]
     else:
-        text_to_eval = "kill me sad funeral"
+        text_to_eval = "Dr. Hertz is awesome!"
         token = None
 
     # read in the saved model structure
@@ -136,7 +136,7 @@ if __name__ == '__main__':
         loggingIn.login()
         # Below line no longer works for some reason. Must run once, copy new URL, replace variable below and run again.
         # url = input()
-        url = "https://www-student.cse.buffalo.edu/CSE442-542/2019-Fall/cse-442j/?code=AQAVzDvWQStmE9jGd5ZuB9bEbW4kWW30oVMPlqJ8Yuf_OK3DEtVtk7xqRJImmd8QdOsON72XLmyamVjfNxfT8yJKpiV-APXb6sQRkfH8svlccnBU33bNxuHoS2-UQilbNHfNE1F9wFd04WFNK9HXCEyfuDW07B_qYrRsPqSYmWEmYO06euAhI3vgwS2-sLSAQ3mj5yPVEXAOsOHForjM-ryxPtNzPn9U8W9f5yj5ysscO782tTTCEs7zke18n9BtrM6aE7iMkwA5Tvfkj_4QldilZe5oGtI-m5tUDVHj0khex7PLeZW5HDQiq3w4aGaTt_l_LB7DjXjesz6CKWDJusPA6uG-5y2zQEF1TOGSgYgUPJbNWREo987fIL2Wg9RZ1oP63PY7SWA90Lsh2ZBS_GafDsXkwHDO3cEZ7p0AyAI66LJyFhhJBirlvmC7dIeR762eA-SMySPIEx9EAT1vCW5y5HJuLGONI35qN5m1-Bd3hQhfI5U"
+        url = "https://www-student.cse.buffalo.edu/CSE442-542/2019-Fall/cse-442j/?code=AQBkVSLVnKKqx7fuve5-y2FR2w_JFx2KuQfLCmNR9RD7RAxAQmkDCfM9En5iJ4boBT3SRby8EnxfkTDF_kJ4QhZ-pJm4Ys37wnssIflbpwrxjSnJFoF0q85gqC3ApdZQsFqN-o7ZQttfhqEAHT_FGnP25IGNafS4_w3ylsP-7cDYvZmirehieCQp7p6IHpfsfhIN2h6VOKzxD7I7Ao4u5Kvtb1zsTQARlAMw7ueqnqQVQMLhq33zjcuA5ZTXu9bNlGUzwbYAKb4ZV45MeE3bmYFU2eVOMTc3rqT4V9jrLOvMps2rItNxuV6mecUgoYX7VqDD8gpEX5EP44z7ZDu37WeBcQ6jCPz3r-4KJ6KPK0fqp1JumTUGtnxaSj7XHthWiTM_zs2JtvHVx1vh22_38rjog6_vWlP39Ajt-qeb3RW770N_y8FMas6N2CDH503X7JHUiJtWUr-kqYttV6JUUKO06VLNJTw3wIqt6hD2e7QQT6crdn4"
         token =loggingIn.getToken(url)
 
     sp =spotipy.client.Spotify(auth=token['access_token'])
@@ -146,6 +146,16 @@ if __name__ == '__main__':
     artistList =[]
     for item in results['items']:
         artistList.append(str(item["id"]))
+
+    top_tracks = sp.current_user_top_tracks()
+    trackList = []
+    for item in top_tracks["items"]:
+        trackList.append(str(item['id']))
+
+    saved_tracks = sp.current_user_saved_tracks()
+    savedList = []
+    for item in saved_tracks['items']:
+        savedList.append(str(item['track']['id']))
 
     track_names = []
     track_ids = []
@@ -164,10 +174,59 @@ if __name__ == '__main__':
         track_ids.append(track["id"])
 
     # Get tracks for artists 10 - 14
-    recommendations = sp.recommendations(seed_artists=artistList[10:14], limit=100)
+    recommendations = sp.recommendations(seed_artists=artistList[10:15], limit=100)
     for track in recommendations["tracks"]:
         track_names.append(track["name"])
         track_ids.append(track["id"])
+
+    # Get tracks for top tracks 0 - 4
+    recommendations = sp.recommendations(seed_tracks=trackList[:5], limit=100)
+    for track in recommendations["tracks"]:
+        track_names.append(track["name"])
+        track_ids.append(track["id"])
+
+    # Get tracks for top tracks 5 - 9
+    recommendations = sp.recommendations(seed_tracks=trackList[5:10], limit=100)
+    for track in recommendations["tracks"]:
+        track_names.append(track["name"])
+        track_ids.append(track["id"])
+
+    # Get tracks for top tracks 10 - 14
+    recommendations = sp.recommendations(seed_tracks=trackList[10:15], limit=100)
+    for track in recommendations["tracks"]:
+        track_names.append(track["name"])
+        track_ids.append(track["id"])
+
+    # Get tracks for top tracks 15 - 19
+    recommendations = sp.recommendations(seed_tracks=trackList[15:20], limit=100)
+    for track in recommendations["tracks"]:
+        track_names.append(track["name"])
+        track_ids.append(track["id"])
+
+    # Get tracks for saved tracks 0 - 4
+    recommendations = sp.recommendations(seed_tracks=savedList[:5], limit=100)
+    for track in recommendations["tracks"]:
+        track_names.append(track["name"])
+        track_ids.append(track["id"])
+
+    # Get tracks for saved tracks 5 - 9
+    recommendations = sp.recommendations(seed_tracks=savedList[5:10], limit=100)
+    for track in recommendations["tracks"]:
+        track_names.append(track["name"])
+        track_ids.append(track["id"])
+
+    # Get tracks for saved tracks 10 - 14
+    recommendations = sp.recommendations(seed_tracks=savedList[10:15], limit=100)
+    for track in recommendations["tracks"]:
+        track_names.append(track["name"])
+        track_ids.append(track["id"])
+
+    # Get tracks for saved tracks 15 - 19
+    recommendations = sp.recommendations(seed_tracks=savedList[15:20], limit=100)
+    for track in recommendations["tracks"]:
+        track_names.append(track["name"])
+        track_ids.append(track["id"])
+
 
     # Get audio features of recommended tracks in groups of 50 (spotipy maximum)
     # Add track names, ids, and valences to tuples
@@ -186,7 +245,7 @@ if __name__ == '__main__':
         #print(bunch)
 
     # Create a new playlist
-    playlist = sp.user_playlist_create(sp.me()["id"], text_to_eval, public=True)
+    playlist = sp.user_playlist_create(sp.me()["id"], "MoodUse created: " + text_to_eval, public=True)
 
     # Get the ID for future use
     playlist_id = playlist["id"]
