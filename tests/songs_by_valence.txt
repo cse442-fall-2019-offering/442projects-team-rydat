@@ -1,0 +1,901 @@
+Songs sorted by valence values
+
+Tell Me Why - 2007 Digital Remaster
+0.0393
+
+The Caves Of Altamira
+0.0569
+
+Mad Man Moon - 2007 - Remaster
+0.0698
+
+The Great Curve - 2005 Remaster
+0.081
+
+Here We Are
+0.0839
+
+Entangled - 2007 - Remaster
+0.0869
+
+Strange
+0.0916
+
+Take It Easy - 2013 Remaster
+0.0998
+
+Vicious
+0.109
+
+Alphys
+0.11
+
+Seen and Not Seen - 2005 Remaster
+0.119
+
+Outlaw Man - 2013 Remaster
+0.12
+
+Tribulations
+0.125
+
+Pretzel Logic
+0.126
+
+Stronger Monsters
+0.139
+
+Light Up Or Leave Me Alone
+0.14
+
+Wasted Time - 2013 Remaster
+0.144
+
+That's All - 2007 Remaster
+0.144
+
+Alphys
+0.149
+
+Life's Been Good - Live
+0.156
+
+Black Friday
+0.158
+
+One of These Nights - 2013 Remaster
+0.162
+
+The Pretender
+0.163
+
+Stronger Monsters
+0.178
+
+Pretzel Logic
+0.18
+
+Entangled - 2007 - Remaster
+0.181
+
+Alphys
+0.189
+
+Jesus He Knows Me - 2007 Digital Remaster
+0.191
+
+Honeymoon With B Troop
+0.194
+
+Death By Glamour
+0.197
+
+Over My Shoulder
+0.198
+
+Honeymoon With B Troop
+0.213
+
+I Could Never Be (Ready)
+0.216
+
+The Great Curve - 2005 Remaster
+0.216
+
+Get You in the Mood - 45 RPM Version; 2008 Remaster
+0.229
+
+Witchy Woman - Eagles 2013 Remaster
+0.234
+
+Metal Crusher
+0.24
+
+Someone Great
+0.24
+
+Entangled - 2007 - Remaster
+0.251
+
+The Great Curve - 2005 Remaster
+0.264
+
+Someone Great
+0.265
+
+Life's Been Good - Live
+0.269
+
+Metal Crusher
+0.27
+
+Joy To The World
+0.273
+
+The Book I Read - 2005 Remaster
+0.274
+
+Tribulations
+0.276
+
+No Reply at All - 2007 Remaster
+0.278
+
+Scarlet Forest
+0.28
+
+Second Home By The Sea - Digital Remastered 2007
+0.284
+
+Second Home By The Sea - Digital Remastered 2007
+0.289
+
+Over My Shoulder
+0.292
+
+Metal Crusher
+0.3
+
+Death By Glamour
+0.305
+
+Two Note Swivel - Unfinished Outtake
+0.305
+
+FM
+0.307
+
+One of These Nights - 2013 Remaster
+0.317
+
+That's All - 2007 Remaster
+0.319
+
+Black Friday
+0.32
+
+Hard Drive
+0.321
+
+No Reply at All - 2007 Remaster
+0.337
+
+The Good Thing - 2005 Remaster
+0.345
+
+I Could Never Be (Ready)
+0.352
+
+Outlaw Man - 2013 Remaster
+0.352
+
+The Great Curve - 2005 Remaster
+0.353
+
+Life's Been Good - Live
+0.354
+
+Two Note Swivel - Unfinished Outtake
+0.356
+
+Entangled - 2007 - Remaster
+0.356
+
+Cities - 2005 Remaster
+0.359
+
+FM
+0.359
+
+Here We Are
+0.36
+
+Seen and Not Seen - 2005 Remaster
+0.361
+
+Honeymoon With B Troop
+0.367
+
+Get You in the Mood - 45 RPM Version; 2008 Remaster
+0.369
+
+The Caves Of Altamira
+0.37
+
+Fooling Yourself (The Angry Young Man)
+0.373
+
+Here We Are
+0.374
+
+One of These Nights - 2013 Remaster
+0.374
+
+Wasted Time - 2013 Remaster
+0.375
+
+Death By Glamour
+0.38
+
+King Of The World
+0.383
+
+Wasted Time - 2013 Remaster
+0.383
+
+Black Cow
+0.384
+
+Someone Great
+0.389
+
+Cities - 2005 Remaster
+0.389
+
+Outlaw Man - 2013 Remaster
+0.393
+
+Someone Great
+0.396
+
+Someone Great
+0.4
+
+The Pretender
+0.402
+
+Tell Me Why - 2007 Digital Remaster
+0.405
+
+Joy To The World
+0.405
+
+The Caves Of Altamira
+0.405
+
+I Get Wild / Wild Gravity - 2005 Remaster
+0.407
+
+Hard Drive
+0.41
+
+Alphys
+0.415
+
+Get You in the Mood - 45 RPM Version; 2008 Remaster
+0.417
+
+Vicious
+0.417
+
+Lost in the Supermarket - Remastered
+0.418
+
+Reelin' In The Years
+0.42
+
+Pretzel Logic
+0.424
+
+Anything She Does - 2007 Digital Remaster
+0.428
+
+Vicious
+0.428
+
+Seen and Not Seen - 2005 Remaster
+0.435
+
+The Caves Of Altamira
+0.436
+
+Stronger Monsters
+0.44
+
+Second Home By The Sea - Digital Remastered 2007
+0.441
+
+The Pretender
+0.441
+
+Black Friday
+0.442
+
+The Book I Read - 2005 Remaster
+0.454
+
+Mad Man Moon - 2007 - Remaster
+0.458
+
+Cities - 2005 Remaster
+0.46
+
+Witchy Woman - Eagles 2013 Remaster
+0.476
+
+King Of The World
+0.481
+
+Entangled - 2007 - Remaster
+0.486
+
+The Great Curve - 2005 Remaster
+0.49
+
+Black Friday
+0.492
+
+Stronger Monsters
+0.501
+
+The Good Thing - 2005 Remaster
+0.502
+
+No Reply at All - 2007 Remaster
+0.504
+
+No Reply at All - 2007 Remaster
+0.506
+
+Reelin' In The Years
+0.517
+
+I Get Wild / Wild Gravity - 2005 Remaster
+0.519
+
+Anything She Does - 2007 Digital Remaster
+0.519
+
+Jesus He Knows Me - 2007 Digital Remaster
+0.519
+
+FM
+0.522
+
+Mad Man Moon - 2007 - Remaster
+0.532
+
+Light Up Or Leave Me Alone
+0.534
+
+Fooling Yourself (The Angry Young Man)
+0.537
+
+Honeymoon With B Troop
+0.539
+
+Light Up Or Leave Me Alone
+0.541
+
+Here We Are
+0.547
+
+Over My Shoulder
+0.549
+
+Witchy Woman - Eagles 2013 Remaster
+0.554
+
+Life's Been Good - Live
+0.555
+
+The Book I Read - 2005 Remaster
+0.56
+
+The Pretender
+0.562
+
+Joy To The World
+0.563
+
+That's All - 2007 Remaster
+0.564
+
+Jesus He Knows Me - 2007 Digital Remaster
+0.569
+
+Seen and Not Seen - 2005 Remaster
+0.574
+
+I Could Never Be (Ready)
+0.575
+
+Road to Nowhere - 2005 Remaster
+0.579
+
+Black Cow
+0.581
+
+Witchy Woman - Eagles 2013 Remaster
+0.583
+
+Black Cow
+0.586
+
+Get You in the Mood - 45 RPM Version; 2008 Remaster
+0.591
+
+Take It Easy - 2013 Remaster
+0.593
+
+Get You in the Mood - 45 RPM Version; 2008 Remaster
+0.595
+
+Scarlet Forest
+0.596
+
+Get You in the Mood - 45 RPM Version; 2008 Remaster
+0.607
+
+Second Home By The Sea - Digital Remastered 2007
+0.619
+
+The Book I Read - 2005 Remaster
+0.62
+
+Strange
+0.626
+
+Road to Nowhere - 2005 Remaster
+0.628
+
+The Pretender
+0.63
+
+Honeymoon With B Troop
+0.632
+
+Second Home By The Sea - Digital Remastered 2007
+0.632
+
+Over My Shoulder
+0.635
+
+Death By Glamour
+0.64
+
+Two Note Swivel - Unfinished Outtake
+0.644
+
+Pretzel Logic
+0.647
+
+Pretzel Logic
+0.647
+
+Outlaw Man - 2013 Remaster
+0.649
+
+Reelin' In The Years
+0.65
+
+Take It Easy - 2013 Remaster
+0.658
+
+Life's Been Good - Live
+0.667
+
+One of These Nights - 2013 Remaster
+0.668
+
+Black Cow
+0.669
+
+Stronger Monsters
+0.67
+
+Tell Me Why - 2007 Digital Remaster
+0.67
+
+Two Note Swivel - Unfinished Outtake
+0.671
+
+Anything She Does - 2007 Digital Remaster
+0.672
+
+King Of The World
+0.675
+
+Wasted Time - 2013 Remaster
+0.677
+
+Wasted Time - 2013 Remaster
+0.679
+
+The Good Thing - 2005 Remaster
+0.682
+
+Black Cow
+0.683
+
+The Great Curve - 2005 Remaster
+0.687
+
+Cities - 2005 Remaster
+0.687
+
+The Last Mall
+0.692
+
+King Of The World
+0.694
+
+Two Note Swivel - Unfinished Outtake
+0.694
+
+Someone Great
+0.699
+
+Vicious
+0.701
+
+The Pretender
+0.701
+
+The Last Mall
+0.707
+
+Outlaw Man - 2013 Remaster
+0.711
+
+Lost in the Supermarket - Remastered
+0.711
+
+FM
+0.717
+
+Lost in the Supermarket - Remastered
+0.719
+
+The Book I Read - 2005 Remaster
+0.723
+
+Entangled - 2007 - Remaster
+0.733
+
+The Book I Read - 2005 Remaster
+0.734
+
+Metal Crusher
+0.735
+
+Road to Nowhere - 2005 Remaster
+0.736
+
+Fooling Yourself (The Angry Young Man)
+0.739
+
+Take It Easy - 2013 Remaster
+0.739
+
+Take It Easy - 2013 Remaster
+0.74
+
+Pretzel Logic
+0.744
+
+Black Friday
+0.745
+
+Strange
+0.746
+
+Road to Nowhere - 2005 Remaster
+0.749
+
+Scarlet Forest
+0.749
+
+Light Up Or Leave Me Alone
+0.75
+
+Reelin' In The Years
+0.751
+
+I Could Never Be (Ready)
+0.751
+
+Mad Man Moon - 2007 - Remaster
+0.752
+
+Mad Man Moon - 2007 - Remaster
+0.755
+
+Fooling Yourself (The Angry Young Man)
+0.755
+
+Road to Nowhere - 2005 Remaster
+0.757
+
+FM
+0.759
+
+Lost in the Supermarket - Remastered
+0.761
+
+The Last Mall
+0.763
+
+Alphys
+0.764
+
+One of These Nights - 2013 Remaster
+0.765
+
+Reelin' In The Years
+0.766
+
+FM
+0.766
+
+Seen and Not Seen - 2005 Remaster
+0.766
+
+Honeymoon With B Troop
+0.77
+
+Joy To The World
+0.771
+
+Fooling Yourself (The Angry Young Man)
+0.777
+
+Second Home By The Sea - Digital Remastered 2007
+0.782
+
+The Last Mall
+0.783
+
+Seen and Not Seen - 2005 Remaster
+0.787
+
+The Good Thing - 2005 Remaster
+0.791
+
+No Reply at All - 2007 Remaster
+0.794
+
+The Caves Of Altamira
+0.794
+
+One of These Nights - 2013 Remaster
+0.795
+
+That's All - 2007 Remaster
+0.797
+
+The Good Thing - 2005 Remaster
+0.797
+
+Two Note Swivel - Unfinished Outtake
+0.799
+
+That's All - 2007 Remaster
+0.799
+
+I Get Wild / Wild Gravity - 2005 Remaster
+0.799
+
+Vicious
+0.8
+
+Tell Me Why - 2007 Digital Remaster
+0.806
+
+Hard Drive
+0.81
+
+Take It Easy - 2013 Remaster
+0.814
+
+Lost in the Supermarket - Remastered
+0.818
+
+Over My Shoulder
+0.82
+
+King Of The World
+0.82
+
+Jesus He Knows Me - 2007 Digital Remaster
+0.823
+
+Cities - 2005 Remaster
+0.826
+
+Cities - 2005 Remaster
+0.828
+
+That's All - 2007 Remaster
+0.836
+
+Tribulations
+0.839
+
+Metal Crusher
+0.84
+
+Lost in the Supermarket - Remastered
+0.841
+
+Here We Are
+0.85
+
+I Could Never Be (Ready)
+0.858
+
+Anything She Does - 2007 Digital Remaster
+0.858
+
+Witchy Woman - Eagles 2013 Remaster
+0.861
+
+Tell Me Why - 2007 Digital Remaster
+0.864
+
+Jesus He Knows Me - 2007 Digital Remaster
+0.867
+
+Here We Are
+0.868
+
+Tribulations
+0.871
+
+Hard Drive
+0.881
+
+Scarlet Forest
+0.886
+
+Black Cow
+0.887
+
+Alphys
+0.89
+
+Light Up Or Leave Me Alone
+0.892
+
+Strange
+0.892
+
+Tribulations
+0.896
+
+Strange
+0.896
+
+Wasted Time - 2013 Remaster
+0.899
+
+The Good Thing - 2005 Remaster
+0.9
+
+King Of The World
+0.904
+
+Witchy Woman - Eagles 2013 Remaster
+0.904
+
+Hard Drive
+0.907
+
+Tell Me Why - 2007 Digital Remaster
+0.908
+
+Hard Drive
+0.909
+
+Anything She Does - 2007 Digital Remaster
+0.912
+
+No Reply at All - 2007 Remaster
+0.913
+
+The Last Mall
+0.921
+
+Outlaw Man - 2013 Remaster
+0.926
+
+Light Up Or Leave Me Alone
+0.926
+
+Jesus He Knows Me - 2007 Digital Remaster
+0.927
+
+Death By Glamour
+0.928
+
+Strange
+0.929
+
+Mad Man Moon - 2007 - Remaster
+0.93
+
+Scarlet Forest
+0.938
+
+Over My Shoulder
+0.942
+
+Death By Glamour
+0.944
+
+Fooling Yourself (The Angry Young Man)
+0.947
+
+Vicious
+0.952
+
+Tribulations
+0.952
+
+Joy To The World
+0.958
+
+I Could Never Be (Ready)
+0.959
+
+I Get Wild / Wild Gravity - 2005 Remaster
+0.961
+
+Stronger Monsters
+0.961
+
+I Get Wild / Wild Gravity - 2005 Remaster
+0.962
+
+Metal Crusher
+0.963
+
+Scarlet Forest
+0.964
+
+Road to Nowhere - 2005 Remaster
+0.966
+
+I Get Wild / Wild Gravity - 2005 Remaster
+0.969
+
+The Last Mall
+0.97
+
+Black Friday
+0.97
+
+The Caves Of Altamira
+0.971
+
+Joy To The World
+0.972
+
+Life's Been Good - Live
+0.978
+
+Reelin' In The Years
+0.985
+
+Anything She Does - 2007 Digital Remaster
+0.99

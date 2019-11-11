@@ -1,0 +1,17 @@
+Rob stated he was unable to complete his story
+
+Yong stated he was wating on the server to go live before testing his story
+
+Dakota had finished his story and only needs to write his task tests
+
+We have decided to switch from the CSE department to Alan's personal server
+it may take him upto the weekend to complete transferring everything to the
+server due to difficulty he has completing 2-factor authentication.
+
+Dakota is making a new user story for accounting for other ways to
+better personalize the generated playlists
+
+Taktuk will begin to start working on the music visualizer
+
+Rob and Yong will both work on the well-named playlists story
+

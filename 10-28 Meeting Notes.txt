@@ -1,0 +1,8 @@
+Luke explained our grading process
+create epics for labeling stories/tasks for sprints
+Taktuk was removed from webserver
+Yong is doing Mobile friendly
+Alan is responsible for web server
+Rob is responisble for being able to play old playlists
+Taktuk was assigned browser controls
+We demoed the project for luke
