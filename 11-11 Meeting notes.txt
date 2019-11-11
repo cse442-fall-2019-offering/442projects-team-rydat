@@ -1,0 +1,38 @@
+Rob stated that he was in the testing phase for 
+his old playlist user story. Also he has not started 
+working on the better naming user story as a result
+of difficulties with the other User Story
+
+Alan explained the difficulty he is having with getting the server functionality 
+
+Taktuk explained that there is difficulty with creating the 
+visualizer as there only exists current models that involve 
+using mp3 files.
+
+Dakota explained that it will be more worthwhile to continue
+using the valence values, rather than trying to formulate a 
+weighted sum of values for determining a "mood" because of 
+inconsitencies he found when testing the weighted sum.
+
+Yong completed his task of verifying mobile 
+friendly
+
+
+Luke stressed that we need commits when we 
+come to meetings to demonstrate what work we 
+have done in the week.
+
+we have decided to continue with working on 
+the visualizer but going into a different 
+direction, with new tasks.
+
+
+taktuk and dakota  will work on the
+visualizer 
+
+Yong will work on verifying that the 
+application works on several browsers
+
+Rob and Alan are both still working on 
+finishing the same tasks they were working 
+on in the previous weeek
