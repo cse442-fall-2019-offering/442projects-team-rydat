@@ -3,6 +3,7 @@ from django.http import HttpResponse
 from spotify.login_page import Login
 import spotipy
 from spotify.playlist_creator import dakota_creation
+from spotify.playlist import Mooduseplaylists
 
 userToken = None;
 sp = None;
@@ -20,7 +21,8 @@ def home(request):
 
     context = {
         'title' : 'Home',
-        'ouruser' : str(sp.current_user()['display_name'])
+        'ouruser' : str(sp.current_user()['display_name']),
+        'oldPlaylists': Mooduseplaylists(userToken['access_token'])
     }
 
     return render(request, 'spotify/home.html', context)

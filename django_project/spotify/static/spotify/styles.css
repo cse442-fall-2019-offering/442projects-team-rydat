@@ -128,3 +128,67 @@ min-height: 500px;
 #header, #main, #footer {
 text-align: center;
 }
+
+#oldPlaylists{
+  height: 100vh;
+  width: 20vw;
+  float: right;
+  background-color: #01DFD7;
+  transform: translateY(-50%);
+}
+
+ul{
+  list-style-type:none;
+  float:left;
+}
+#oldPlaylists{
+  height: 100vh;
+  width: 400px;
+  float: right;
+  transform: translateY(-50%);
+}
+.tracklist{
+  width:100%;
+  background-color:black;
+  height:11vh;
+}
+#PlaylistImg{
+  height: 90%;
+  width: 33%;
+  float:left;
+}
+#PlaylistName{
+  width: 66%;
+  font-size: 20px;
+  float:right;
+  transform:translateY(-15%);
+}
+ul{
+  list-style-type:none;
+  float:left;
+}
+li:hover{
+  background-color:grey;
+}
+#oldPlaylists{
+  height: 100vh;
+  width: 400px;
+  float: right;
+  transform: translateY(-50%);
+}
+.tracklist{
+  width:100%;
+  background-color:black;
+  height:11vh;
+}
+#PlaylistImg{
+  height: 90%;
+  width: 33%;
+  float:left;
+}
+#PlaylistName{
+  width: 66%;
+  font-size: 20px;
+  float:right;
+  transform:translateY(-15%);
+}
