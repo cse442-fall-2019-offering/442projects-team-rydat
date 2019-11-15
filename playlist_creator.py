@@ -24,6 +24,7 @@ class Playlist_creator():
 
         weights_path = os.path.abspath("model.h5")
         self.model.load_weights(weights_path)
+        self.model._make_predict_function()
 
     def convert_text_to_index_array(self, text):
 
@@ -107,7 +108,7 @@ class Playlist_creator():
         reformed = " ".join(reformed_line)
         return reformed
 
-    def create_playlist(self, token, text_to_eval):
+    def create_playlist(self, text_to_eval, token):
 
         trimmed_sentence = self.remove_appos(text_to_eval)
         testArr = self.convert_text_to_index_array(trimmed_sentence)
@@ -128,7 +129,7 @@ class Playlist_creator():
             token =loggingIn.getToken(loggingIn.REDIRECT_URI)
         except NoTokenError:
             loggingIn.login()
-            url = "https://www-student.cse.buffalo.edu/CSE442-542/2019-Fall/cse-442j/?code=AQAGiJuYHA42OSk_8AAt3Q7RNAwR_wIkV7ql5chZ5_13AgreyuyVTt_Q0SP4eEK-tCNXklKbnFoD89D40rHKrCJjABj-_Zd5uNmx3OMiib6LUbKfNaOImvTiHtZckMo_pfaQSl9eOyEzWnGBIzAWzFP85Bd-j0NlfEEZp0koXRwObN0LfUm7cv1AzFHXTJnDuq0BcKpCdLctfWIa0gx5wuklzq6ttB8dG5SiuMel_zmgQ_m29eXIg5LmkNQSw1zC89r9HUghJZ_hNZN---SHSVRIPdDBHUH4_73JxlMkdZo6pCh9UG9456FlQxiU56nkD0VlnIHvY0WxMSdD81xTl3ggnfUV_Vr-o6IQQnOBm7EIAJnMKtlRu3PSSj6YEPaTX5CRZyeyFXzxseH3AKR4kxeR058GXTevVz9E8zM7eEbvlGOghy3NbkeykPdPj40c9dT9lGqusgcQp4LRLc-Qzxoh84iPVlaIUWrIRydcaltS9kCLIZ0"
+            url = "https://www-student.cse.buffalo.edu/CSE442-542/2019-Fall/cse-442j/?code=AQBhCVmGOMwlBA7t5_F1cY2Rq5yQmztf-RPSC57DIBNdhGyD1Y4w97OqZ6O1N7iWjwqlWRtae3kdTGhrRiwuz-ou-7s19xEC6FF5Vvioo1-oKqfqMnoujjSpdu1Il3MkqHFIhm_hneEuxJPVX-KFYxBJxIjhcsoo1eC2QjkuK_FDUXzzInhO14BFm0dEQC9vzfxzmXts6pv1w-m1qHAD8WYDxcvNpi_7-8ynVERmOZjVuzHm6tsISQiQty2LYhQV1jgAN5FZ6ZJoXDTNikKPHjr7DMnEDU7TqpZ-nKGEkxUBcoN6vF8WHXhGGQeRCGTNtLSyjnInqn1FKWd860eB6Y0rgZX_aoy9q3Pxo686o_m28rJiFyVoHtX0F9U_wf0cb0ZV-tW4ynTY1CriblWuqTAqFXclLCqt0PVur70N21tXlhH-D0-u5tr0GQ-Shhbs6_iaifJwtA_tEDngQXaMJjEU_Q6W-aZw7gXqHmlC-9TuHHjY"
             token =loggingIn.getToken(url)
 
         sp =spotipy.client.Spotify(auth=token['access_token'])
@@ -254,3 +255,6 @@ class Playlist_creator():
         # Add tracks
         sp.user_playlist_add_tracks(sp.me()["id"], playlist_id, good_ids)
 
+if __name__ == '__main__':
+    creator = Playlist_creator()
+    creator.create_playlist("Fuck this", "")
