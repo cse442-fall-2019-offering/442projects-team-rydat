@@ -107,7 +107,7 @@ class Playlist_creator():
         reformed = " ".join(reformed_line)
         return reformed
 
-    def create_playlist(self, text_to_eval):
+    def create_playlist(self, token, text_to_eval):
 
         trimmed_sentence = self.remove_appos(text_to_eval)
         testArr = self.convert_text_to_index_array(trimmed_sentence)
