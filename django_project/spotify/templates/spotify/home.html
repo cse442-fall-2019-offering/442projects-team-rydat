@@ -31,8 +31,7 @@
   <br>
   <form method="POST" action = "{% url 'mooduse-generated' %}">
     {% csrf_token %}
-    <input type="text" name="feels" />
-    <input type="submit" value="Generate playlist" />
+    <input type="text" placeholder="I feel..." name="feels" />
   </form>
 </div>
 
