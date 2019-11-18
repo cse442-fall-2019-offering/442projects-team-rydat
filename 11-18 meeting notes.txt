@@ -1,0 +1,13 @@
+11/18 Meeting Notes
+Hashtags and descriptions shuold all be in the first line of commits.
+Desciptions should be brief, shorter than this sentence.
+
+Remember to separate out user stories/tasks with labels before grading for Sprint 3.
+
+User story - Alan - caching user data to allow for multiple users
+User story - Yong - UI overall
+User story - Taktuk - speech to text
+User story - Rob - further development of old playlist options
+User story - Dakota - machine learning validity
+
+Make sure to clean up ZenHub before grading, all user stories have tasks and tests, all issues are placed into the correct category.
