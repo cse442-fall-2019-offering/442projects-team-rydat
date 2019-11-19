@@ -13,15 +13,11 @@ def login(request):
     return render(request, 'spotify/login.html', {'title' : 'Login'})
 
 def loginbutton(request):
-#    l = Login()
-#    l.login()
-
     url = rob_login()
-
     context = {
-            'title' : 'Approve this',
-            'url' : url
-            }
+        'title' : 'Approve this',
+        'url' : url
+    }
     return render(request, 'spotify/proceed.html', context)
 
 def home(request):
@@ -33,9 +29,9 @@ def home(request):
     global sp
     sp = spotipy.client.Spotify(auth=userToken['access_token'])
     context = {
-            'title' : 'Home',
-            'ouruser' : str(sp.current_user()['display_name'])
-            }
+        'title' : 'Home',
+        'ouruser' : str(sp.current_user()['display_name'])
+    }
     return render(request, 'spotify/home.html', context)
 
 def generated(request):
@@ -55,17 +51,13 @@ def generated(request):
             'token': userToken,
             'playlist' : resulting_id,
             'ouruser' : str(sp.current_user()['display_name'])
-
-            }
+        }
     return render(request, 'spotify/generated.html', context)
 
 def logoutbutton(request):
-    #l = Login()
-    #l.logout()
     url = rob_logout()
-
     context = {
-            'title' : 'Contiue log out',
-            'url' : url
-            }
+        'title' : 'Contiue log out',
+        'url' : url
+    }
     return render(request, 'spotify/logout.html', context)

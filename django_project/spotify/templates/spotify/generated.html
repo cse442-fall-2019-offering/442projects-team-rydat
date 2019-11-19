@@ -2,53 +2,48 @@
 
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
-    <meta name='viewport' content='width=device-width, initial-scale=1'>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+  <meta name='viewport' content='width=device-width, initial-scale=1, user-scalable=yes' >
 
-    <link rel="stylesheet" href="{% static 'spotify/styles.css' %}">
-    <link rel="icon" href="{% static 'spotify/lyre.jpg' %}"/>
+  <link rel="stylesheet" href="{% static 'spotify/styles.css' %}">
+  <link rel="icon" href="{% static 'spotify/lyre.jpg' %}"/>
 
-    {% if title %}
-      <title>MooDuse - {{ title }}</title>
-    {% else %}
-      <title>MooDuse</title>
-    {% endif %}
-  </head>
+  <script src = "{% static 'spotify/animation.js'%}"> </script>
+  <script src = "{% static 'spotify/color.js'%}"></script>
+  <script src = "{% static 'spotify/fractal.js'%}"></script>
+  <script src = "{% static 'spotify/htree.js'%}"></script>
 
-  <body>
-    <div>
-      <div id="lefttext">
-        {% if ouruser %}
-          Hello, {{ ouruser }}
-        {% endif %}
-      <br>
-        <div style="font-size: 12px; color: #D7DF01">-Not you?
-          <button id="logout" onclick="location.href='{% url 'logout-button' %}'" type="button">
-            logout here
-          </button>
-        </div>
-      </div>
-    </div>
+  {% if title %}
+  <title>MooDuse - {{ title }}</title>
+  {% else %}
+  <title>MooDuse</title>
+  {% endif %}
+</head>
 
-      {% if emotion %}
-      <h1> Your input: {{emotion}} </h1>
-      <br>
-      <h2> Hover over the music notes, <br> view your playlist, <br> and enjoy the music! </h2>
-      {% else %}
-      <h1> Please enter a valid emotion! </h1>
-      {% endif %}
+<body>
+  {% if emotion %}
+  <h1> {{ ouruser }}, your input was: {{emotion}} </h1>
+  <h1> Hover over the music notes, view your playlist, and enjoy the music! </h1>
+  {% else %}
+  <h1> Please enter a valid emotion! </h1>
+  {% endif %}
 
-      <div id="playlistNav"  align="right" onclick="openRight()">
-        <img src="{% static 'spotify/images/double note.jpg' %}" id="doubleNote" align="left" >
-        <div id="playlistinstruction" align="left"> View Playlist </div>
-      </div>
+  <div id="playlistNav"  align="right" onclick="openRight()">
+    <img src="{% static 'spotify/images/double note.jpg' %}" id="doubleNote" align="left" >
+    <div id="playlistinstruction" align="left"> View Playlist </div>
+  </div>
 
-      <button id="newplaylist" onclick="location.href='{% url 'newplaylist-button' %}'" type="button">
-      Generate new playlist
-      </button>
-  </body>
+  <button id="newplaylist" onclick=goBack() type="button"> Generate new playlist </button>
+  <div style="font-size: 12px; color: #D7DF01">
+    <button id="logout" onclick="location.href='{% url 'logout-button' %}'" type="button">
+      Logout Here
+    </button>
+  </div>
+
+  <canvas id="HTreeDemo" width="900" height="1000"> </canvas>
+</body>
 </html>
 
 <div id="sidebar-right" class="rightside">
@@ -69,5 +64,24 @@ function openRight() {
 
 function closeRight() {
   document.getElementById("sidebar-right").style.width = "0";
+}
+
+function goBack(){
+  window.history.back();
+}
+</script>
+
+<script type="text/javascript">
+// rgba(91,0,144,0.3)
+if(window.innerWidth > 900){
+  var canvas = document.getElementById('HTreeDemo') ;
+  canvas.height = window.innerHeight;
+  canvas.width = window.innerWidth;
+  fract = new Fractal.HTree(canvas, {x: 0, y: 0}, 12, "black", "rgba(91,0,144,0.3)", true);
+  start = {x: canvas.width / 2, y: canvas.height / 2};
+  target = {x: canvas.width / 4, y: canvas.height / 7};
+  var htreeAnim = new Fractal.Animation(fract, start, target);
+  htreeAnim.skip(2000);
+  htreeAnim.stop();
 }
 </script>
