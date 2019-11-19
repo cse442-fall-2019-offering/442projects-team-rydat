@@ -1,8 +1,13 @@
 h1,h2{
   color: white;
 }
+.btn-submit{
+  float:left;
+  color:green;
+}
 body{
-  background-image:url('images/visual.gif');
+  background: rgb(2,0,36);
+  background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(15,219,60,1) 0%, rgba(124,209,226,1) 100%);
   background-size:100%;
   background-repeat: repeat;
   height:100%;
@@ -46,10 +51,7 @@ color: #84bd00; /* White text color */
 border-radius: 0 5px 5px 0; /* Rounded corners on the top right and bottom right side */
 }
 
-#HTreeDemo{
-position: absolute;
-top: 500px;
-}
+
 
 #playlistNav:hover{
 right:0vw;
@@ -133,4 +135,16 @@ min-height: 500px;
 }
 #header, #main, #footer {
 text-align: center;
+}
+
+#microphone-btn{
+  background-image: -webkit-linear-gradient(top, #eb94d0, #2079b0);  background-image: -moz-linear-gradient(top, #eb94d0, #2079b0);  background-image: -ms-linear-gradient(top, #eb94d0, #2079b0);  background-image: -o-linear-gradient(top, #eb94d0, #2079b0);  background-image: linear-gradient(to bottom, #eb94d0, #2079b0);
+  -webkit-border-radius: 28;  -moz-border-radius: 28;  border-radius: 28px;
+  font-family: Arial;  color: #fafafa;  font-size: 15px;  padding: 19px;  text-decoration: none;
+  outline:none;
+}
+#HTreeDemo{
+position: absolute;
+top:0;
+margin:auto;
 }

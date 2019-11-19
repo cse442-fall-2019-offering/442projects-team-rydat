@@ -20,7 +20,7 @@ def home(request):
 
     context = {
         'title' : 'Home',
-        'ouruser' : str(sp.current_user()['display_name'])
+        'ouruser' : str(sp.current_user()['display_name']),
     }
 
     return render(request, 'spotify/home.html', context)

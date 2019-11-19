@@ -1,7 +1,7 @@
 {% extends "spotify/base.html" %}
 {% block content %}
 {% load static %}
-
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <link rel="stylesheet" href="{% static 'spotify/styles.css' %}">
 
 <div>
@@ -29,13 +29,57 @@
   How are you feeling today?
   <br>
   <br>
+
+  <button class="btn-submit" id = "microphone-btn"><i class="fa fa-microphone"></i></button>
+
   <form method="POST" action = "{% url 'mooduse-generated' %}">
     {% csrf_token %}
-    <input type="text" name="feels" />
+    <input type="text" name="feels" id = "speech-input" />
     <input type="submit" value="Generate playlist" />
   </form>
 </div>
 
+<script>
 
+
+          var SpeechRecognition = SpeechRecognition || webkitSpeechRecognition;
+          var SpeechGrammarList = SpeechGrammarList || webkitSpeechGrammarList;
+          var grammar = '#JSGF V1.0;'
+          var recognition = new SpeechRecognition();
+          var speechRecognitionList = new SpeechGrammarList();
+          speechRecognitionList.addFromString(grammar, 1);
+          recognition.grammars = speechRecognitionList;
+          recognition.lang = 'en-US';
+          recognition.interimResults = false;
+
+
+              recognition.onresult = function(event) {
+              var last = event.results.length - 1;
+              var command = event.results[last][0].transcript;
+              document.querySelector('#speech-input').value = command;
+
+
+              }
+
+              recognition.onspeechend = function() {
+              recognition.stop();
+          };
+
+          recognition.onerror = function(event) {
+              window.alert('I cannot hear you properly , please try again');
+          }
+
+    document.querySelector('.btn-submit').addEventListener('click', function(){
+              recognition.start();
+          });
+
+
+  </script>
+<style>
+  .btn-submit{
+    color:green;
+  }
+
+  </style>
 
 {% endblock content %}

@@ -1,12 +1,11 @@
-{% load static %}
-
 <!DOCTYPE html>
+{% load static %}
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
-
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="{% static 'spotify/styles.css' %}">
     <link rel="icon" href="{% static 'spotify/lyre.jpg' %}"/>
     <script src = "{% static 'spotify/animation.js'%}"> </script>
@@ -20,8 +19,6 @@
     {% else %}
       <title>MooDuse</title>
     {% endif %}
-
-
   </head>
 
   <body>
@@ -48,58 +45,20 @@
       {% endif %}
 
 
-      <div id="playlistNav"  align="right" onclick="openRight()">
+      <div id="playlistNav"  align="center" onclick="openRight()">
         <img src="{% static 'spotify/images/double note.jpg' %}" id="doubleNote" align="left" >
         <div id="playlistinstruction" align="left"> View Playlist </div>
       </div>
 
-      <button id="newplaylist" onclick= goBack() type="button">
+      <button id="newplaylist" class = "btn btn-light" onclick= goBack() type="button">
       Generate new playlist
       </button>
-      <canvas id="HTreeDemo" width="900" height="1000"> </canvas>
+      <canvas id="HTreeDemo"> </canvas>
 
-<style>
 
-#HTreeDemo{
-  position: absolute;
-  top:0;
-  margin:auto;
-
-}
-
-</style>
 <!-- ........................ -->
-<script>
-
-function goBack(){
-  window.history.back();
-}
-</script>
 
 
-
-<script type="text/javascript">
-// rgba(91,0,144,0.3)
-	var canvas = document.getElementById('HTreeDemo') ;
-
-  canvas.height = window.innerHeight;
-  canvas.width = window.innerWidth;
-
-	fract = new Fractal.HTree(canvas, {x: 0, y: 0}, 12, "black", "rgba(91,0,144,0.3)", true);
-
-	start = {x: canvas.width / 2, y: canvas.height};
-	target = {x: canvas.width / 4, y: canvas.height / 7};
-	var htreeAnim = new Fractal.Animation(fract, start, target);
-
-	htreeAnim.skip(2000);
-	htreeAnim.stop();
-</script>
-
-
-
-
-  </body>
-</html>
 
 <div id="sidebar-right" class="rightside">
   <a href="javascript:void(0)" class="closerightbtn" onclick="closeRight()"> &times; </a>
@@ -112,7 +71,11 @@ function goBack(){
   </div>
 </div>
 
-<script>
+<script type="text/javascript">
+
+function goBack(){
+  window.history.back();
+}
 function openRight() {
   document.getElementById("sidebar-right").style.width = "550px";
 }
@@ -120,4 +83,30 @@ function openRight() {
 function closeRight() {
   document.getElementById("sidebar-right").style.width = "0";
 }
+
+var canvas = document.getElementById('HTreeDemo') ;
+
+canvas.height = 532;
+canvas.width = 1000;
+
+fract = new Fractal.HTree(canvas, {x: 0, y: 0}, 12, "black", "rgba(91,0,144,0.3)", true);
+
+start = {x: canvas.width / 2, y: canvas.height};
+target = {x: canvas.width / 4, y: canvas.height / 7};
+var htreeAnim = new Fractal.Animation(fract, start, target);
+
+htreeAnim.skip(2000);
+htreeAnim.stop();
+
 </script>
+
+
+
+
+
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  </body>
+</html>
