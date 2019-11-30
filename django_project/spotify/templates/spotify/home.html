@@ -34,18 +34,24 @@
     <input type="text" name="feels" />
     <input type="submit" value="Generate playlist" />
   </form>
-  <iframe id="embededPlayer" src="" width="600" height="80" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe> 
+  <div id=playlistPlayer>
+    <button id="showSongs" style="display: none;" value="show songs" onclick="showSongs()"> </button>
+    <iframe id="embededPlayer" src="" width="600" height="80" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe> 
+
+
+
+  </div>
 </div>
 
 {% if oldPlaylists %}
-<div id="oldPlaylists" style="overflow-y:auto;" >
+<div id="oldPlaylists">
   <h1> Previously generated playlists </h1>
   <ul>
   {% for plist in oldPlaylists %}
       <li  >
       <div id="{{plist.2}}" class="tracklist">
-      <img id="PlaylistImg" src="{{plist.1}}">
-      <h2 id="PlaylistName"> {{plist.0}} </h2>
+      <img class="PlaylistImg" src="{{plist.1}}">
+      <h2 class="PlaylistName"> {{plist.0}} </h2>
       </div>
       </li>
   {% endfor %}

@@ -10,7 +10,7 @@ def Mooduseplaylists(token):
     MoodLists=[]
     for item in playlists:
         if item['name'].find("MooDuse") != -1:
-            MoodLists.append((item['name'],item['images'],item['id']))
+            MoodLists.append((item['name'],item['images'][1]['url'],item['id']))
     return MoodLists
 
 if __name__ == "__main__":
