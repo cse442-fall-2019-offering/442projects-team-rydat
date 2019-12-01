@@ -128,3 +128,88 @@ min-height: 500px;
 #header, #main, #footer {
 text-align: center;
 }
+#main{
+  width:80vw;
+}
+
+
+#oldPlaylists{
+  position:fixed;
+  top:20px;
+  left:80vw;
+  height: 100vh;
+  width: 20vw;
+  float: right;
+  background-color: #040404;
+}
+
+ul{
+  list-style-type:none;
+  float:left;
+  transform: translateX(-2vw);
+  max-height:75vh;
+  overflow-y:auto;
+}
+.tracklist:hover{
+  background-color:grey;
+}
+
+.tracklist{
+  width:fit-content;
+  background-color:black;
+  height:11vh;
+}
+.PlaylistImg{
+  height: 90%;
+  width: 33%;
+  float:left;
+}
+.PlaylistName{
+  width: 66%;
+  font-size: 12px;
+  float:right;
+}
+
+#playlistPlayer{
+  width:640px;
+  height 600px;
+  transform:translateX(15vw);
+
+}
+#showSongs{
+  width: 80px;
+  height: 60px;
+  
+  float: left;
+  display: none;
+  background-color:#040404;
+  color:white;
+  font-family:cursive;
+  
+}
+#embededPlayer
+{
+  width: 560px;
+  height: 80px;
+  float: right;
+    
+}
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #040404;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: grey;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
