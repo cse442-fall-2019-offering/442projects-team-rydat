@@ -167,7 +167,7 @@ def dakota_creation(text_to_eval, token):
     # Create a new playlist
     tz = timezone('US/Eastern')
     dt = datetime.datetime.now(tz)
-    playlist = sp.user_playlist_create(sp.me()["id"], "MooDuse Generation - " + str(dt), public=True)
+    playlist = sp.user_playlist_create(sp.me()["id"], "MooDuse Generation - " + text_to_eval, public=True)
 
     # Get the ID for future use
     playlist_id = playlist["id"]
