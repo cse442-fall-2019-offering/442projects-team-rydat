@@ -1,8 +1,10 @@
 body{
 	background-color: #255;
 	color: pink;
-	margin: 20% auto;
+	margin: 15% auto;
 	text-align: center;
+	overflow-y: hidden;
+	overflow-x:hidden;
 }
 .btn{
     background-image: url("images/connect.png");

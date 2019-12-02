@@ -1,19 +1,11 @@
 body{
 	background-color: #255;
 	color: pink;
-	margin: 20% auto;
+	margin: auto;
 	text-align: center;
-}
-#header{
-font-family: 'Satisfy', cursive;
-color: #2EFEC8;
-width:100%;
-height:10%;
-font-size: 80px;
-}
-#lefttext{
-color: #01DFD7;
-font-size: 25px;
+	overflow-x: hidden;
+	overflow-y: hidden;
+	width = 60%
 }
 #logout{
 outline: 0;
@@ -29,9 +21,9 @@ text-decoration: underline;
 #playlistNav {
 width: 20vw;
 height: 8vh;
-background-color: #101010;
+background-color: black;
 position: absolute; /* Position them relative to the browser window */
-right: calc(8vh - 20vw); /* Position them outside of the screen */
+right: calc(8vh - 21.5vw); /* Position them outside of the screen */
 transition: 0.3s; /* Add transition on hover */
 padding: 0px; /* 15px padding */
 text-decoration: none; /* Remove underline */
@@ -39,24 +31,12 @@ font-size: 20px; /* Increase font size */
 color: #84bd00; /* White text color */
 border-radius: 0 5px 5px 0; /* Rounded corners on the top right and bottom right side */
 }
-#playlistNav:hover{
-right:0vw;
-}
-#doubleNote{
-height: 8vh;
-width: 8vh;
-}
-#playlistinstruction{
-  height: 8vh;
-  width: auto;
-}
 input[type=text] {
-width: 45vw;
+width: 40%;
 height:vh;
-box-sizing: border-box;
-border: 2px solid #ccc;
+border: 1px solid black;
 border-radius: 4px;
-font-size: 16px;
+font-size: 14px;
 background-color: white;
 background-image: url('images/microphone.jpg');
 background-size: 20px;
@@ -64,12 +44,8 @@ background-position: 9px 10px;
 background-repeat: no-repeat;
 padding: 12px 20px 12px 40px;
 }
-#main{
-float:left;
-width:100%;
-padding-top: 120;
-font-size: 30px;
-color: #F8E0E6;
+.main{
+	margin: 10% auto;
 }
 .rightside {
 height: 100%; /* 100% Full-height */
@@ -78,20 +54,17 @@ position: fixed; /* Stay in place */
 z-index: 1; /* Stay on top */
 top: 0; /* Stay at the top */
 right: 0;
-background-color: #2A0A1B;
+background-color: black;
 overflow-x: hidden; /* Disable horizontal scroll */
-padding-top: 60px; /* Place content 60px from the top */
+padding-top: 50px; /* Place content 60px from the top */
 transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
 }
 .rightside .closerightbtn {
 position: absolute;
-top: 10;
-right: 10px;
-font-size: 20px;
+top: 1%;
+right: 5%;
+font-size: 40px;
 margin-left: 50px;
-}
-.onclick{
-font-size: 50px;
 }
 @media screen and (max-height: 450px) {
 .sidenav {padding-top: 15px;}
@@ -100,9 +73,6 @@ font-size: 50px;
 #playlist{
 text-align: center;
 font-size: 25px;
-}
-#tab{
-	top:30%;
 }
 li.track {
 font-family: 'Satisfy', cursive;
@@ -114,14 +84,15 @@ font-family: 'Times New Roman';
 color: #848484;
 font-size: 14px	
 }
-#footer{
-clear:both;
-height: 100px;
-width: 100%;
+h2 {
+	margin: 50% 5%;
 }
-#sidebar-left, #main, #sidebar-right{
-min-height: 500px;
-}
-#header, #main, #footer {
-text-align: center;
+.btn{
+    background-image: url("images/connect.png");
+    background-color: transparent;
+    background-size: contain;
+    background-repeat: no-repeat;
+    border:none;
+    height:10vh;
+	width: 30%;
 }
