@@ -3,6 +3,34 @@ body{
   margin: 10% auto;
   text-align: center;
 }
+h1{
+    font-family: 'Satisfy', cursive;
+    color: #2EFEC8;
+    width:100%;
+    height:100%;
+    font-size: 5vw;
+    text-align: center;
+  }
+.icon{
+    width:38%;
+    height: 100%;
+    margin-right:2%;
+    float: left;
+}
+.credentials{
+    font-size: 3vw;
+    width: 60%;
+    height: 100%;
+    margin-bottom: 2%;
+    float: left;
+}
+img{
+    width: 100%;
+    height:70vh;
+    object-fit: contain;
+    mix-blend-mode: multiply;
+
+}
 .btn{
     background-image: url("images/connect.png");
     background-color: transparent;
