@@ -15,7 +15,7 @@ class NoTokenError(Exception):
 class Login:
     def __init__(self):
         ''' sets redirect page to the home page'''
-        self.REDIRECT_URI = 'http://localhost:8000/home/'
+        self.REDIRECT_URI = 'http://www.mooduse.live:8000/home/'
         self.clientId='9f78b7eb1de54f6eb13701d07a891506'
         self.Secret='563e75870871424f9a26bb2bb66897bb'
         self.scope='user-read-email user-top-read playlist-modify-public user-library-read user-read-playback-state user-read-currently-playing streaming user-read-private user-modify-playback-state'
@@ -43,9 +43,13 @@ class Login:
         if(loggedOut is True):
             dialogue="&show_dialog=true"
         webbrowser.open(self.authentication.get_authorize_url()+dialogue)
+
     def logout(self, token=None):
         token=None
         self.login(True)
+
+
+        
 if __name__== "__main__":
     loggingIn=Login()
     try:

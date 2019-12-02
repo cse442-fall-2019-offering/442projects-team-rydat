@@ -2,22 +2,22 @@
 
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
-    <meta name='viewport' content='width=device-width, initial-scale=1'>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+  <meta name='viewport' content='width=device-width, initial-scale=1'>
 
-    <link rel="icon" href="{% static 'spotify/lyre.jpg' %}"/>
 
-    {% if title %}
-      <title>MooDuse - {{ title }}</title>
-    {% else %}
-      <title>MooDuse</title>
-    {% endif %}
+  <link rel="icon" href="{% static 'spotify/lyre.jpg' %}"/>
 
-  </head>
+  {% if title %}
+  <title> MooDuse - {{ title }} </title>
+  {% else %}
+  <title> MooDuse </title>
+  {% endif %}
+</head>
 
-  <body>
-    {% block content %}{% endblock %}
-  </body>
+<body>
+  {% block content %}{% endblock %}
+</body>
 </html>

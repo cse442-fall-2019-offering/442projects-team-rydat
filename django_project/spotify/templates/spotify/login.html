@@ -4,17 +4,10 @@
 
 {% block content %}
 
-  <link rel="stylesheet" href="{% static 'spotify/login.css' %}">
+<link rel="stylesheet" href="{% static 'spotify/styles.css' %}">
 
-  <h1> Welcome to MooDuse </h1>
-
-  <div class="icon">
-    <img src="{% static 'spotify/images/test.png' %}" height="500" class="center",align=left>
-  </div>
-
-  <div class="credentials">
-    <p>Before you can use MooDuse, you must login to Spotify first</p>
-    <button class="btn btn-primary" id="btn" value="submit" onclick="location.href = '{% url 'login-button' %}' "> </button>
-  </div>
+<img src="{% static 'spotify/images/MooDuse_White.png' %}">
+<h1> Please Login to Spotify to Use MooDuse </h1>
+<button class="btn btn-primary" value="submit" onclick="location.href = '{% url 'login-button' %}'"> </button>
 
 {% endblock content %}

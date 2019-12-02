@@ -2,64 +2,75 @@
 {% block content %}
 {% load static %}
 
-<link rel="stylesheet" href="{% static 'spotify/styles.css' %}">
-<script src="{% static 'spotify/PlaylistClick.js' %}"> </script>
-<div>
-  <div id="lefttext">
-    {% if ouruser %}
-      Hello, {{ ouruser }}
-    {% endif %}
-  <br>
-    <div style="font-size: 12px; color: #D7DF01">-Not you?
-      <button id="logout" onclick="location.href='{% url 'logout-button' %}'" type="button">
-        logout here
-      </button>
-    </div>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css"/>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
 
-  </div>
-</div>
+
+<link rel="stylesheet" href="{% static 'spotify/styles.css' %}">
+
+<nav class="navbar navbar-inverse">
+  {% if ouruser %}
+    <div class = "navbar-brand">Hello, {{ ouruser }}!</div>
+  {% else %}
+    <div class = "navbar-brand">Hello!</div>
+  {% endif %}
+    <ul class="nav navbar-nav">
+      <li><a class = "active" onclick="location.href='{% url 'logout-button' %}'"><span class="glyphicon glyphicon-log-out"/> Logout</a></li>
+    </ul>
+  </nav>
 
 <br>
 
-<div id="header"> MooDuse </div>
+<img src="{% static 'spotify/images/MooDuse_White.png' %}">
 
+<br>
 <br>
 
 <div id="main">
-  How are you feeling today?
-  <br>
-  <br>
+  <h1> How are you feeling today? </h1>
   <form method="POST" action = "{% url 'mooduse-generated' %}">
     {% csrf_token %}
-    <input type="text" name="feels" />
-    <input type="submit" value="Generate playlist" />
+    <button class="btn-submit" id = "microphone-btn"><i class="fa fa-microphone"></i></button>
+    <input type="text" placeholder="I feel..." name="feels" id = "speech-input"/>
   </form>
   <div id=playlistPlayer>
     <button id="showSongs" style="display: none;" value="show songs" onclick="showSongs()"> </button>
-    <iframe id="embededPlayer" src="" width="600" height="80" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe> 
+    <iframe id="embededPlayer" src="" width="600" height="80" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
 
 
 
-  </div>
-</div>
+  <script>
+  var SpeechRecognition = SpeechRecognition || webkitSpeechRecognition;
+  var SpeechGrammarList = SpeechGrammarList || webkitSpeechGrammarList;
+  var grammar = '#JSGF V1.0;'
+  var recognition = new SpeechRecognition();
+  var speechRecognitionList = new SpeechGrammarList();
+  speechRecognitionList.addFromString(grammar, 1);
+  recognition.grammars = speechRecognitionList;
+  recognition.lang = 'en-US';
+  recognition.interimResults = false;
+  recognition.onresult = function(event) {
+    var last = event.results.length - 1;
+    var command = event.results[last][0].transcript;
+    document.querySelector('#speech-input').value = command;
+  }
+  recognition.onspeechend = function() {
+    recognition.stop();
+  };
+  /* recognition.onerror = function(event) {
+    window.alert('I cannot hear you properly , please try again');
+  }
+  */
+  document.querySelector('.btn-submit').addEventListener('click', function(){
+    recognition.start();
+  });
+</script>
 
-{% if oldPlaylists %}
-<div id="oldPlaylists">
-  <h1> Previously generated playlists </h1>
-  <ul>
-  {% for plist in oldPlaylists %}
-      <li  >
-      <div id="{{plist.2}}" class="tracklist">
-      <img class="PlaylistImg" src="{{plist.1}}">
-      <h2 class="PlaylistName"> {{plist.0}} </h2>
-      </div>
-      </li>
-  {% endfor %}
-  </ul>
-</div>
-{% endif %}
-
+<style>
+  .btn-submit{
+    color:green;
+  }
+</style>
 {% endblock content %}
-
-
-
