@@ -4,11 +4,10 @@
 
 {% block content %}
 
-<link rel="stylesheet" href="{% static 'spotify/login.css' %}">
+<link rel="stylesheet" href="{% static 'spotify/styles.css' %}">
 
-<img src="{% static 'spotify/images/test.png' %}" height="100" width = "100">
+<img src="{% static 'spotify/images/MooDuse_White.png' %}">
 <h1> Please Login to Spotify to Use MooDuse </h1>
 <button class="btn btn-primary" value="submit" onclick="location.href = '{% url 'login-button' %}'"> </button>
-
 
 {% endblock content %}

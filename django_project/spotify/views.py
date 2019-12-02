@@ -30,7 +30,7 @@ def home(request):
     sp = spotipy.client.Spotify(auth=userToken['access_token'])
     context = {
         'title' : 'Home',
-        'ouruser' : str(sp.current_user()['display_name'])
+        'ouruser' : str(sp.current_user()['display_name']),
     }
     return render(request, 'spotify/home.html', context)
 
@@ -57,7 +57,7 @@ def generated(request):
 def logoutbutton(request):
     url = rob_logout()
     context = {
-        'title' : 'Contiue log out',
+        'title' : 'Continue to log out',
         'url' : url
     }
     return render(request, 'spotify/logout.html', context)
